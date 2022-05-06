@@ -9,7 +9,7 @@ fn main() {
     let len = sps.len();
     for i in 0..sps.len() {
         let mut sp = sps.get(i).unwrap().into_spinner().unwrap();
-        sp.set_message(format!("{} {}/{}", sp.spinner, i, len));
+        sp.set_message(format!("{:<20} {}/{}", sp.spinner, i + 1, len));
         sp.start();
 
         thread::sleep(Duration::from_millis(1000));
