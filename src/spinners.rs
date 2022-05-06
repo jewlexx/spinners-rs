@@ -10,7 +10,8 @@ extern "C" {
         pub fn startSpinner(self);
         pub fn start(self);
         pub fn stop(self);
-    
+
+        pub fn new() -> Self;
     }
 }
 
