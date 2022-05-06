@@ -27,7 +27,7 @@ pub enum Event {
 pub struct Spinner {
     pub spinner: Spinners,
     interval: u64,
-    frames: Vec<char>,
+    frames: Vec<&'static str>,
     sender: Option<Sender<Event>>,
     message: String,
 }
