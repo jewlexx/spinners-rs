@@ -3,6 +3,7 @@ name = "spinners-rs"
 authors = ["Juliette Cordor"]
 categories = ["command-line-interface"]
 homepage = "https://github.com/jewlexx/spinners-rs"
+documentation = "https://docs.rs/spinners-rs"
 include = ["src/**/*", "README.md"]
 keywords = ["spinner", "spin", "loader", "term", "terminal"]
 license = "MIT"
