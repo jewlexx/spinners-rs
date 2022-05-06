@@ -1,4 +1,10 @@
-use std::collections::HashMap;
+use std::{
+    collections::HashMap,
+    io::{stdout, Write},
+    sync::mpsc::{channel, Sender, TryRecvError},
+    thread,
+    time::Duration,
+};
 
 use lazy_static::lazy_static;
 use maplit::hashmap;
@@ -9,6 +15,7 @@ pub struct Spinner {
     pub spinner: Spinners,
     pub frames: Vec<char>,
     pub interval: u64,
+    sender: Option<Sender<()>>,
 }
 
 pub enum Error {
@@ -24,10 +31,35 @@ impl Spinner {
                 spinner,
                 frames: frames.chars().collect(),
                 interval: interval.unwrap_or(100),
+                sender: None,
             })
         } else {
             Err(Error::UnknownSpinner(spinner.to_string()))
         }
+    }
+
+    pub fn start(&mut self) {
+        let interval = self.interval;
+        let frames = self.frames.clone();
+
+        let (sender, recv) = channel::<()>();
+
+        thread::spawn(move || 'outer: loop {
+            let mut stdout = stdout();
+
+            for frame in frames.iter() {
+                match recv.try_recv() {
+                    Ok(_) | Err(TryRecvError::Disconnected) => break 'outer,
+                    _ => {}
+                };
+
+                print!("\r{} {}", frame, "msg here");
+                stdout.flush().unwrap();
+                thread::sleep(Duration::from_millis(interval));
+            }
+        });
+
+        self.sender = Some(sender);
     }
 }
 
