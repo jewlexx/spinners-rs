@@ -150,6 +150,28 @@ impl Spinner {
         }
     }
 
+    /// Stops the spinner and replaces the current frame with the given symbol
+    ///
+    /// # Example:
+    ///
+    /// ```
+    /// use spinners_rs::Spinners;
+    ///
+    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// sp.start();
+    ///
+    /// thread::sleep(Duration::from_millis(1000));
+    ///
+    /// sp.stop_with_symbol('✓');
+    /// ```
+    pub fn stop_with_symbol<S: std::fmt::Display>(&self, symbol: S) {
+        if let Some(sender) = &self.sender {
+            sender.send(Event::Stop).unwrap();
+            print!("\r{} {}", symbol, self.message);
+            stdout().flush().unwrap();
+        }
+    }
+
     /// Updates the frame interval
     ///
     /// This changes how fast each frame comes up
