@@ -54,7 +54,6 @@ pub enum Spinners {
     Toggle12,
     Toggle13,
     Arrow,
-    Dots12,
     Dots8Bit,
     Line,
     Line2,
@@ -409,13 +408,13 @@ lazy_static! {
             "⣾",
             "⣿"
             ],
-            "Line".into() => vec![
+            "line".into() => vec![
             "-",
             "\\",
             "|",
             "/"
             ],
-            "Line2".into() => vec![
+            "line2".into() => vec![
             "⠂",
             "-",
             "–",
@@ -423,7 +422,7 @@ lazy_static! {
             "–",
             "-"
             ],
-            "Pipe".into() => vec![
+            "pipe".into() => vec![
             "┤",
             "┘",
             "┴",
@@ -433,13 +432,13 @@ lazy_static! {
             "┬",
             "┐"
             ],
-            "SimpleDots".into() => vec![
+            "simpleDots".into() => vec![
             ".  ",
             ".. ",
             "...",
             "   "
             ],
-            "SimpleDotsScrolling".into() => vec![
+            "simpleDotsScrolling".into() => vec![
             ".  ",
             ".. ",
             "...",
@@ -447,7 +446,7 @@ lazy_static! {
             "  .",
             "   "
             ],
-            "Star".into() => vec![
+            "star".into() => vec![
             "✶",
             "✸",
             "✹",
@@ -455,12 +454,12 @@ lazy_static! {
             "✹",
             "✷"
             ],
-            "Star2".into() => vec![
+            "star2".into() => vec![
             "+",
             "x",
             "*"
             ],
-            "Flip".into() => vec![
+            "flip".into() => vec![
             "_",
             "_",
             "_",
@@ -474,11 +473,12 @@ lazy_static! {
             "_",
             "_"
             ],
-            "Hamburger".into() => vec![
+            "hamburger".into() => vec![
             "☱",
             "☲",
             "☴"
-            ],        "GrowVertical".into() => vec![
+            ],
+            "growVertical".into() => vec![
             "▁",
             "▃",
             "▄",
@@ -490,7 +490,7 @@ lazy_static! {
             "▄",
             "▃"
             ],
-            "GrowHorizontal".into() => vec![
+            "growHorizontal".into() => vec![
             "▏",
             "▎",
             "▍",
@@ -504,7 +504,7 @@ lazy_static! {
             "▍",
             "▎"
             ],
-            "Balloon".into() => vec![
+            "balloon".into() => vec![
             " ",
             ".",
             "o",
@@ -513,7 +513,7 @@ lazy_static! {
             "*",
             " "
             ],
-            "Balloon2".into() => vec![
+            "balloon2".into() => vec![
             ".",
             "o",
             "O",
@@ -522,34 +522,36 @@ lazy_static! {
             "o",
             "."
             ],
-            "Noise".into() => vec![
+            "noise".into() => vec![
             "▓",
             "▒",
             "░"
-            ],        "Bounce".into() => vec![
+            ],
+            "bounce".into() => vec![
             "⠁",
             "⠂",
             "⠄",
             "⠂"
             ],
-            "BoxBounce".into() => vec![
+            "boxBounce".into() => vec![
             "▖",
             "▘",
             "▝",
             "▗"
             ],
-            "BoxBounce2".into() => vec![
+            "boxBounce2".into() => vec![
             "▌",
             "▀",
             "▐",
             "▄"
-            ],        "Triangle".into() => vec![
+            ],
+            "triangle".into() => vec![
             "◢",
             "◣",
             "◤",
             "◥"
             ],
-            "Arc".into() => vec![
+            "arc".into() => vec![
             "◜",
             "◠",
             "◝",
@@ -557,7 +559,7 @@ lazy_static! {
             "◡",
             "◟"
             ],
-            "Circle".into() => vec![
+            "circle".into() => vec![
             "◡",
             "⊙",
             "◠"
