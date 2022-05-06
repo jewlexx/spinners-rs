@@ -10,18 +10,26 @@ use thiserror::Error as ThisError;
 
 use crate::Spinners;
 
+#[derive(Debug, Clone, ThisError, Display)]
+pub enum Error {
+    UnknownSpinner(String),
+}
+
+#[derive(Debug, Clone, Display)]
+pub enum Event {
+    Stop,
+    SetMessage(String),
+    SetInterval(u64),
+    // SetFrames(Vec<char>),
+}
+
 #[derive(Debug, Clone)]
 pub struct Spinner {
     pub spinner: Spinners,
     interval: u64,
     frames: Vec<char>,
-    sender: Option<Sender<()>>,
+    sender: Option<Sender<Event>>,
     message: String,
-}
-
-#[derive(Debug, Clone, ThisError, Display)]
-pub enum Error {
-    UnknownSpinner(String),
 }
 
 impl Spinners {
@@ -49,26 +57,38 @@ impl Spinner {
 
     pub fn set_interval(&mut self, interval: u64) {
         self.interval = interval;
+        if let Some(sender) = &self.sender {
+            sender.send(Event::SetInterval(interval)).unwrap();
+        }
     }
 
     pub fn set_message<S: Into<String>>(&mut self, message: S) {
         self.message = message.into();
+        if let Some(sender) = &self.sender {
+            sender
+                .send(Event::SetMessage(self.message.clone()))
+                .unwrap();
+        }
     }
 
     pub fn start(&mut self) {
-        let interval = self.interval;
-        let frames = self.frames.clone();
-        let message = self.message.clone();
+        let spinner = self.clone();
 
-        let (sender, recv) = channel::<()>();
+        let (sender, recv) = channel::<Event>();
 
         thread::spawn(move || 'outer: loop {
+            let mut interval = spinner.interval;
+            let mut message = spinner.message.clone();
+            let frames = spinner.frames.clone();
+
             let mut stdout = stdout();
 
             for frame in frames.iter() {
                 match recv.try_recv() {
-                    Ok(_) | Err(TryRecvError::Disconnected) => break 'outer,
-                    _ => {}
+                    Ok(Event::Stop) | Err(TryRecvError::Disconnected) => break 'outer,
+                    Ok(Event::SetMessage(message_)) => message = message_,
+                    Ok(Event::SetInterval(interval_)) => interval = interval_,
+                    Err(TryRecvError::Empty) => {}
                 };
 
                 print!("\r{} {}", frame, message);
@@ -82,7 +102,7 @@ impl Spinner {
 
     pub fn stop(&self) {
         if let Some(sender) = &self.sender {
-            sender.send(()).unwrap();
+            sender.send(Event::Stop).unwrap();
         }
     }
 }
