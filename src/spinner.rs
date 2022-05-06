@@ -8,7 +8,7 @@ use std::{
 use strum::Display;
 use thiserror::Error as ThisError;
 
-use crate::{Spinners, SPINNER_MAP};
+use crate::Spinners;
 
 #[derive(Debug, Clone)]
 pub struct Spinner {
@@ -32,11 +32,9 @@ impl Spinners {
 
 impl Spinner {
     pub fn new<S: Into<String>>(spinner: Spinners, message: S) -> Result<Self, Error> {
-        let frames = SPINNER_MAP.get(&spinner.to_string());
+        let frames = spinner.get_frames();
 
-        if let Some(frames) = frames {
-            let frames: Vec<char> = frames.chars().collect();
-
+        if let Ok(frames) = frames {
             Ok(Self {
                 spinner,
                 frames: frames.clone(),
