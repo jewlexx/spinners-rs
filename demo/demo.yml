@@ -111,635 +111,765 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 1163
-    content: "\e[2J\e[m\e[H⠋ dots                 1/82\e]0;C:\\Program Files\\PowerShell\\7\\pwsh.exe\a\e[?25h"
-  - delay: 99
-    content: "\e[?25l\e[H⠙ dots                 1/82\e[?25h"
+  - delay: 1137
+    content: "\e[2J\e[m\e[H⠋ dots                 1/81\e]0;C:\\Program Files\\PowerShell\\7\\pwsh.exe\a\e[?25h"
+  - delay: 113
+    content: "\e[?25l\e[H⠙ dots                 1/81\e[?25h"
   - delay: 101
-    content: "\e[?25l\e[H⠹ dots                 1/82\e[?25h"
-  - delay: 110
-    content: "\e[?25l\e[H⠸ dots                 1/82\e[?25h"
+    content: "\e[?25l\e[H⠹ dots                 1/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H⠸ dots                 1/81\e[?25h"
   - delay: 100
-    content: "\e[?25l\e[H⠼ dots                 1/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H⠴ dots                 1/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠦ dots                 1/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H⠧ dots                 1/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠇ dots                 1/82\e[?25h"
-  - delay: 110
-    content: "\e[?25l\e[H⠏ dots                 1/82\e[?25h"
-  - delay: 78
-    content: "\e[?25l\e[H⣾ dots2                2/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⣽ dots2                2/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H⣻ dots2                2/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⢿ dots2                2/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⡿ dots2                2/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H⣟ dots2                2/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⣯ dots2                2/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H⣷ dots2                2/82\e[?25h"
-  - delay: 121
-    content: "\e[?25l\e[H⠋ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠙ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠚ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠞ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠖ dots3                3/82\e[?25h"
-  - delay: 114
-    content: "\e[?25l\e[H⠦ dots3                3/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H⠴ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠲ dots3                3/82\e[?25h"
-  - delay: 101
-    content: "\e[?25l\e[H⠳ dots3                3/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H⠓ dots3                3/82\e[?25h"
+    content: "\e[?25l\e[H⠼ dots                 1/81\e[?25h"
   - delay: 84
-    content: "\e[?25l\e[H⠄ dots4                4/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H⠆ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠇ dots4                4/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H⠋ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠙ dots4                4/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H⠸ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠰ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠠ dots4                4/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H⠰ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠸ dots4                4/82\e[?25h"
-  - delay: 85
-    content: "\e[?25l\e[H⠙ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠋ dots4                4/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H⠇ dots4                4/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H⠆ dots4                4/82\e[?25h"
-  - delay: 43
-    content: "\e[?25l\e[H⠋ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠙ dots5                5/82\e[?25h"
-  - delay: 59
-    content: "\e[?25l\e[H⠚ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠒ dots5                5/82\e[?25h"
-  - delay: 61
-    content: "\e[?25l\e[H⠂ dots5                5/82\e[?25h"
-  - delay: 59
-    content: "\e[?25l\e[H⠂ dots5                5/82\e[?25h"
-  - delay: 62
-    content: "\e[?25l\e[H⠒ dots5                5/82\e[?25h"
-  - delay: 59
-    content: "\e[?25l\e[H⠲ dots5                5/82\e[?25h"
-  - delay: 62
-    content: "\e[?25l\e[H⠴ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠦ dots5                5/82\e[?25h"
-  - delay: 63
-    content: "\e[?25l\e[H⠖ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠒ dots5                5/82\e[?25h"
-  - delay: 64
-    content: "\e[?25l\e[H⠐ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠐ dots5                5/82\e[?25h"
-  - delay: 65
-    content: "\e[?25l\e[H⠒ dots5                5/82\e[?25h"
-  - delay: 58
-    content: "\e[?25l\e[H⠓ dots5                5/82\e[?25h"
-  - delay: 65
-    content: "\e[?25l\e[H⠋ dots5                5/82\e[?25h"
-  - delay: 33
-    content: "\e[?25l\e[H⠁ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠉ dots6                6/82\e[?25h"
-  - delay: 46
-    content: "\e[?25l\e[H⠙ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠚ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠒ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠂ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠂ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠲ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠴ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠤ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠄ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠄ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠤ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠴ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠲ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠂ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠂ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠚ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠙ dots6                6/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠉ dots6                6/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠁ dots6                6/82\e[?25h"
-  - delay: 36
-    content: "\e[?25l\e[H⠈ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠉ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠋ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠓ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠐ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠐ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots7                7/82\e[?25h"
-  - delay: 44
-    content: "\e[?25l\e[H⠖ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠦ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠤ dots7                7/82\e[?25h"
-  - delay: 43
-    content: "\e[?25l\e[H⠠ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠠ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠤ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠦ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠖ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠐ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠐ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠒ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠓ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠋ dots7                7/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠉ dots7                7/82\e[?25h"
-  - delay: 41
-    content: "\e[?25l\e[H⠈ dots7                7/82\e[?25h"
-  - delay: 38
-    content: "\e[?25l\e[H⠁ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠁ dots8                8/82\e[?25h"
-  - delay: 37
-    content: "\e[?25l\e[H⠉ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠙ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠚ dots8                8/82\e[?25h"
-  - delay: 49
-    content: "\e[?25l\e[H⠒ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠂ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠂ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠒ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠲ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠴ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠤ dots8                8/82\e[?25h"
-  - delay: 42
-    content: "\e[?25l\e[H⠄ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠄ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠤ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠠ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠠ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠤ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠦ dots8                8/82\e[?25h"
-  - delay: 36
-    content: "\e[?25l\e[H⠖ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠒ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠐ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠐ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠒ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠓ dots8                8/82\e[?25h"
-  - delay: 34
-    content: "\e[?25l\e[H⠋ dots8                8/82\e[?25h"
-  - delay: 43
-    content: "\e[?25l\e[H⠉ dots8                8/82\e[?25h"
-  - delay: 35
-    content: "\e[?25l\e[H⠈ dots8                8/82\e[?25h"
-  - delay: 32
-    content: "\e[?25l\e[H⢹ dots9                9/82\e[?25h"
-  - delay: 127
-    content: "\e[?25l\e[H⢺ dots9                9/82\e[?25h"
-  - delay: 124
-    content: "\e[?25l\e[H⢼ dots9                9/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⣸ dots9                9/82\e[?25h"
+    content: "\e[?25l\e[H⣾ dots2                2/81\e[?25h"
   - delay: 125
-    content: "\e[?25l\e[H⣇ dots9                9/82\e[?25h"
+    content: "\e[?25l\e[H⣽ dots2                2/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H⣻ dots2                2/81\e[?25h"
   - delay: 125
-    content: "\e[?25l\e[H⡧ dots9                9/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⡗ dots9                9/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⡏ dots9                9/82\e[?25h"
-  - delay: 121
-    content: "\e[?25l\e[H⢄ dots10               10/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[H⢂ dots10               10/82\e[?25h"
-  - delay: 145
-    content: "\e[?25l\e[H⢁ dots10               10/82\e[?25h"
-  - delay: 142
-    content: "\e[?25l\e[H⡁ dots10               10/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[H⡈ dots10               10/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[H⡐ dots10               10/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[H⡠ dots10               10/82\e[?25h"
-  - delay: 141
-    content: "\e[?25l\e[H⠁ dots11               11/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⠂ dots11               11/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⠄ dots11               11/82\e[?25h"
+    content: "\e[?25l\e[H⢿ dots2                2/81\e[?25h"
   - delay: 125
-    content: "\e[?25l\e[H⡀ dots11               11/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H⢀ dots11               11/82\e[?25h"
-  - delay: 139
-    content: "\e[?25l\e[H⠠ dots11               11/82\e[?25h"
-  - delay: 127
-    content: "\e[?25l\e[H⠐ dots11               11/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H⠈ dots11               11/82\e[?25h"
-  - delay: 115
-    content: "\e[?25l\e[H┤ pipe                 12/82\e[?25h"
-  - delay: 127
-    content: "\e[?25l\e[H┘ pipe                 12/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H┴ pipe                 12/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H└ pipe                 12/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H├ pipe                 12/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H┌ pipe                 12/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H┬ pipe                 12/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H┐ pipe                 12/82\e[?25h"
-  - delay: 120
-    content: "\e[?25l\e[H✶ star                 13/82\e[?25h"
-  - delay: 166
-    content: "\e[?25l\e[H✸ star                 13/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H✹ star                 13/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H✺ star                 13/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H✹ star                 13/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H✷ star                 13/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H+ star2                14/82\e[?25h"
-  - delay: 344
-    content: "\e[?25l\e[Hx star2                14/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H* star2                14/82\e[?25h"
-  - delay: 322
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 88
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H- flip                 15/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H` flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H` flip                 15/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H' flip                 15/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H´ flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H- flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H_ flip                 15/82\e[?25h"
-  - delay: 77
-    content: "\e[?25l\e[H☱ hamburger            16/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H☲ hamburger            16/82\e[?25h"
-  - delay: 333
-    content: "\e[?25l\e[H☴ hamburger            16/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H▁ growVertical         17/82\e[?25h"
+    content: "\e[?25l\e[H⠋ dots3                3/81\e[?25h"
   - delay: 100
-    content: "\e[?25l\e[H▃ growVertical         17/82\e[?25h"
+    content: "\e[?25l\e[H⠙ dots3                3/81\e[?25h"
   - delay: 101
-    content: "\e[?25l\e[H▄ growVertical         17/82\e[?25h"
-  - delay: 102
-    content: "\e[?25l\e[H▅ growVertical         17/82\e[?25h"
+    content: "\e[?25l\e[H⠚ dots3                3/81\e[?25h"
   - delay: 101
-    content: "\e[?25l\e[H▆ growVertical         17/82\e[?25h"
+    content: "\e[?25l\e[H⠞ dots3                3/81\e[?25h"
   - delay: 101
-    content: "\e[?25l\e[H▇ growVertical         17/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H▆ growVertical         17/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H▅ growVertical         17/82\e[?25h"
-  - delay: 100
-    content: "\e[?25l\e[H▄ growVertical         17/82\e[?25h"
-  - delay: 110
-    content: "\e[?25l\e[H▃ growVertical         17/82\e[?25h"
+    content: "\e[?25l\e[H⠖ dots3                3/81\e[?25h"
+  - delay: 97
+    content: "\e[?25l\e[H⠄ dots4                4/81\e[?25h"
   - delay: 86
-    content: "\e[?25l\e[H▏ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▎ growHorizontal       18/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H▍ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▌ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▋ growHorizontal       18/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H▊ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▉ growHorizontal       18/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H▊ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▋ growHorizontal       18/82\e[?25h"
-  - delay: 83
-    content: "\e[?25l\e[H▌ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▍ growHorizontal       18/82\e[?25h"
-  - delay: 84
-    content: "\e[?25l\e[H▎ growHorizontal       18/82\e[?25h"
-  - delay: 80
-    content: "\e[?25l\e[H. balloon              19/82\e[?25h"
+    content: "\e[?25l\e[H⠆ dots4                4/81\e[?25h"
   - delay: 72
-    content: "\e[?25l\e[Hi balloon              19/82\e[?25h"
-  - delay: 75
-    content: "\e[?25l\e[Hn balloon              19/82\e[?25h"
+    content: "\e[?25l\e[H⠇ dots4                4/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H⠋ dots4                4/81\e[?25h"
   - delay: 71
-    content: "\e[?25l\e[Ht balloon              19/82\e[?25h"
+    content: "\e[?25l\e[H⠙ dots4                4/81\e[?25h"
   - delay: 72
-    content: "\e[?25l\e[Ho balloon              19/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H( balloon              19/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H) balloon              19/82\e[?25h"
-  - delay: 75
-    content: "\e[?25l\e[H  balloon              19/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H. balloon              19/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[Ho balloon              19/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[HO balloon              19/82\e[?25h"
-  - delay: 71
-    content: "\e[?25l\e[H@ balloon              19/82\e[?25h"
-  - delay: 85
-    content: "\e[?25l\e[H* balloon              19/82\e[?25h"
-  - delay: 72
-    content: "\e[?25l\e[H  balloon              19/82\e[?25h"
-  - delay: 53
-    content: "\e[?25l\e[H. balloon2             20/82\e[?25h"
-  - delay: 142
-    content: "\e[?25l\e[Ho balloon2             20/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[HO balloon2             20/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[H° balloon2             20/82\e[?25h"
-  - delay: 142
-    content: "\e[?25l\e[HO balloon2             20/82\e[?25h"
-  - delay: 143
-    content: "\e[?25l\e[Ho balloon2             20/82\e[?25h"
-  - delay: 147
-    content: "\e[?25l\e[H. balloon2             20/82\e[?25h"
-  - delay: 140
-    content: "\e[?25l\e[H▓ noise                21/82\e[?25h"
-  - delay: 333
-    content: "\e[?25l\e[H▒ noise                21/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H░ noise                21/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H⠁ bounce               22/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H⠂ bounce               22/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H⠄ bounce               22/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H⠂ bounce               22/82\e[?25h"
-  - delay: 249
-    content: "\e[?25l\e[H▖ boxBounce            23/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H▘ boxBounce            23/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H▝ boxBounce            23/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H▗ boxBounce            23/82\e[?25h"
-  - delay: 248
-    content: "\e[?25l\e[H▌ boxBounce2           24/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H▀ boxBounce2           24/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H▐ boxBounce2           24/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H▄ boxBounce2           24/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H◢ triangle             25/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◣ triangle             25/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H◤ triangle             25/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◥ triangle             25/82\e[?25h"
-  - delay: 248
-    content: "\e[?25l\e[H◜ arc                  26/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H◠ arc                  26/82\e[?25h"
-  - delay: 166
-    content: "\e[?25l\e[H◝ arc                  26/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H◞ arc                  26/82\e[?25h"
-  - delay: 166
-    content: "\e[?25l\e[H◡ arc                  26/82\e[?25h"
-  - delay: 166
-    content: "\e[?25l\e[H◟ arc                  26/82\e[?25h"
-  - delay: 167
-    content: "\e[?25l\e[H◜ arc                  26/82\e[?25h"
-  - delay: 9
-    content: "\e[?25l\e[H◡ circle               27/82\e[?25h"
-  - delay: 327
-    content: "\e[?25l\e[H⊙ circle               27/82\e[?25h"
-  - delay: 337
-    content: "\e[?25l\e[H◠ circle               27/82\e[?25h"
-  - delay: 329
-    content: "\e[?25l\e[H◰ squareCorners        28/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◳ squareCorners        28/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H◲ squareCorners        28/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◱ squareCorners        28/82\e[?25h"
-  - delay: 249
-    content: "\e[?25l\e[H◴ circleQuaters        29/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◷ circleQuaters        29/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◶ circleQuaters        29/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◵ circleQuaters        29/82\e[?25h"
-  - delay: 247
-    content: "\e[?25l\e[H◐ circleHalves         30/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H◓ circleHalves         30/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H◑ circleHalves         30/82\e[?25h"
-  - delay: 264
-    content: "\e[?25l\e[H◒ circleHalves         30/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H╫ squish               31/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H╪ squish               31/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H⊶ toggle               32/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H⊷ toggle               32/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H▫ toggle2              33/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H▪ toggle2              33/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H□ toggle3              34/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H■ toggle3              34/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H■ toggle4              35/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H□ toggle4              35/82\e[?25h"
-  - delay: 251
-    content: "\e[?25l\e[H▪ toggle4              35/82\e[?25h"
-  - delay: 250
-    content: "\e[?25l\e[H▫ toggle4              35/82\e[?25h"
-  - delay: 249
-    content: "\e[?25l\e[H▮ toggle5              36/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H▯ toggle5              36/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[Hဝ toggle6              37/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H၀ toggle6              37/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H⦾ toggle7              38/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H⦿ toggle7              38/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H◍ toggle8              39/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H◌ toggle8              39/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H◉ toggle9              40/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H◎ toggle9              40/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H㊂ toggle10             41/82\e[?25h"
-  - delay: 333
-    content: "\e[?25l\e[H㊀ toggle10             41/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H㊁ toggle10             41/82\e[?25h"
-  - delay: 337
-    content: "\e[?25l\e[H⧇ toggle11             42/82\e[?25h"
-  - delay: 503
-    content: "\e[?25l\e[H⧆ toggle11             42/82\e[?25h"
-  - delay: 497
-    content: "\e[?25l\e[H☗ toggle12             43/82\e[?25h"
-  - delay: 501
-    content: "\e[?25l\e[H☖ toggle12             43/82\e[?25h"
-  - delay: 500
-    content: "\e[?25l\e[H= toggle13             44/82\e[?25h"
-  - delay: 339
-    content: "\e[?25l\e[H* toggle13             44/82\e[?25h"
-  - delay: 334
-    content: "\e[?25l\e[H- toggle13             44/82\e[?25h"
-  - delay: 327
-    content: "\e[?25l\e[H← arrow                45/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H↖ arrow                45/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H↑ arrow                45/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H↗ arrow                45/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H→ arrow                45/82\e[?25h"
-  - delay: 125
-    content: "\e[?25l\e[H↘ arrow                45/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H↓ arrow                45/82\e[?25h"
-  - delay: 126
-    content: "\e[?25l\e[H↙ arrow                45/82\e[?25h"
-  - delay: 122
-    content: thread '
+    content: "\e[?25l\e[H⠸ dots4                4/81\e[?25h"
+  - delay: 78
+    content: "\e[?25l\e[H⠰ dots4                4/81\e[?25h"
+  - delay: 49
+    content: "\e[?25l\e[H⠋ dots5                5/81\e[?25h"
+  - delay: 73
+    content: "\e[?25l\e[H⠙ dots5                5/81\e[?25h"
+  - delay: 58
+    content: "\e[?25l\e[H⠚ dots5                5/81\e[?25h"
+  - delay: 62
+    content: "\e[?25l\e[H⠒ dots5                5/81\e[?25h"
+  - delay: 59
+    content: "\e[?25l\e[H⠂ dots5                5/81\e[?25h"
+  - delay: 66
+    content: "\e[?25l\e[H⠂ dots5                5/81\e[?25h"
+  - delay: 59
+    content: "\e[?25l\e[H⠒ dots5                5/81\e[?25h"
+  - delay: 64
+    content: "\e[?25l\e[H⠲ dots5                5/81\e[?25h"
+  - delay: 58
+    content: "\e[?25l\e[H⠴ dots5                5/81\e[?25h"
   - delay: 8
-    content: "main' panicked at 'called `Result::unwrap()` on an `Err` value: UnknownSpinner(\"dots12\")', examples\\cycle.rs:11:57\r\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\r\n"
+    content: "\e[?25l\e[H⠁ dots6                6/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠉ dots6                6/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠙ dots6                6/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠚ dots6                6/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠒ dots6                6/81\e[?25h"
+  - delay: 43
+    content: "\e[?25l\e[H⠂ dots6                6/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠂ dots6                6/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠒ dots6                6/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠲ dots6                6/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠴ dots6                6/81\e[?25h"
+  - delay: 56
+    content: "\e[?25l\e[H⠤ dots6                6/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠄ dots6                6/81\e[?25h"
+  - delay: 28
+    content: "\e[?25l\e[H⠈ dots7                7/81\e[?25h"
+  - delay: 50
+    content: "\e[?25l\e[H⠉ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠋ dots7                7/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠓ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠒ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠐ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠐ dots7                7/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠒ dots7                7/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠖ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠦ dots7                7/81\e[?25h"
+  - delay: 41
+    content: "\e[?25l\e[H⠤ dots7                7/81\e[?25h"
+  - delay: 42
+    content: "\e[?25l\e[H⠠ dots7                7/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠁ dots8                8/81\e[?25h"
+  - delay: 40
+    content: "\e[?25l\e[H⠁ dots8                8/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H⠉ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠙ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠚ dots8                8/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H⠒ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠂ dots8                8/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H⠂ dots8                8/81\e[?25h"
+  - delay: 40
+    content: "\e[?25l\e[H⠒ dots8                8/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H⠲ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠴ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠤ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠄ dots8                8/81\e[?25h"
+  - delay: 35
+    content: "\e[?25l\e[H⠄ dots8                8/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H⠤ dots8                8/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⢹ dots9                9/81\e[?25h"
+  - delay: 122
+    content: "\e[?25l\e[H⢺ dots9                9/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H⢼ dots9                9/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H⣸ dots9                9/81\e[?25h"
+  - delay: 124
+    content: "\e[?25l\e[H⢄ dots10               10/81\e[?25h"
+  - delay: 142
+    content: "\e[?25l\e[H⢂ dots10               10/81\e[?25h"
+  - delay: 144
+    content: "\e[?25l\e[H⢁ dots10               10/81\e[?25h"
+  - delay: 142
+    content: "\e[?25l\e[H⡁ dots10               10/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H⠁ dots11               11/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H⠂ dots11               11/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H⠄ dots11               11/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H⡀ dots11               11/81\e[?25h"
+  - delay: 124
+    content: "\e[?25l\e[H┤ pipe                 12/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H┘ pipe                 12/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H┴ pipe                 12/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H└ pipe                 12/81\e[?25h"
+  - delay: 124
+    content: "\e[?25l\e[H✶ star                 13/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H✸ star                 13/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H✹ star                 13/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H✺ star                 13/81\e[?25h"
+  - delay: 20
+    content: "\e[?25l\e[H+ star2                14/81\e[?25h"
+  - delay: 315
+    content: "\e[?25l\e[Hx star2                14/81\e[?25h"
+  - delay: 176
+    content: "\e[?25l\e[H_ flip                 15/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H_ flip                 15/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H_ flip                 15/81\e[?25h"
+  - delay: 87
+    content: "\e[?25l\e[H- flip                 15/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H` flip                 15/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H` flip                 15/81\e[?25h"
+  - delay: 81
+    content: "\e[?25l\e[H☱ hamburger            16/81\e[?25h"
+  - delay: 334
+    content: "\e[?25l\e[H☲ hamburger            16/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H▁ growVertical         17/81\e[?25h"
+  - delay: 108
+    content: "\e[?25l\e[H▃ growVertical         17/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H▄ growVertical         17/81\e[?25h"
+  - delay: 100
+    content: "\e[?25l\e[H▅ growVertical         17/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H▆ growVertical         17/81\e[?25h"
+  - delay: 90
+    content: "\e[?25l\e[H▏ growHorizontal       18/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H▎ growHorizontal       18/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H▍ growHorizontal       18/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H▌ growHorizontal       18/81\e[?25h"
+  - delay: 94
+    content: "\e[?25l\e[H▋ growHorizontal       18/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H▊ growHorizontal       18/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H  balloon              19/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[H. balloon              19/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[Ho balloon              19/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[HO balloon              19/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H. balloon2             20/81\e[?25h"
+  - delay: 142
+    content: "\e[?25l\e[Ho balloon2             20/81\e[?25h"
+  - delay: 142
+    content: "\e[?25l\e[HO balloon2             20/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[H° balloon2             20/81\e[?25h"
+  - delay: 73
+    content: "\e[?25l\e[H▓ noise                21/81\e[?25h"
+  - delay: 334
+    content: "\e[?25l\e[H▒ noise                21/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H⠁ bounce               22/81\e[?25h"
+  - delay: 251
+    content: "\e[?25l\e[H⠂ bounce               22/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H▖ boxBounce            23/81\e[?25h"
+  - delay: 251
+    content: "\e[?25l\e[H▘ boxBounce            23/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H▌ boxBounce2           24/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H▀ boxBounce2           24/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H◢ triangle             25/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H◣ triangle             25/81\e[?25h"
+  - delay: 251
+    content: "\e[?25l\e[H◤ triangle             25/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H◜ arc                  26/81\e[?25h"
+  - delay: 160
+    content: "\e[?25l\e[H◠ arc                  26/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H◝ arc                  26/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H◡ circle               27/81\e[?25h"
+  - delay: 334
+    content: "\e[?25l\e[H⊙ circle               27/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H◰ squareCorners        28/81\e[?25h"
+  - delay: 251
+    content: "\e[?25l\e[H◳ squareCorners        28/81\e[?25h"
+  - delay: 249
+    content: "\e[?25l\e[H◴ circleQuaters        29/81\e[?25h"
+  - delay: 251
+    content: "\e[?25l\e[H◷ circleQuaters        29/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H◶ circleQuaters        29/81\e[?25h"
+  - delay: 18
+    content: "\e[?25l\e[H◐ circleHalves         30/81\e[?25h"
+  - delay: 233
+    content: "\e[?25l\e[H◓ circleHalves         30/81\e[?25h"
+  - delay: 261
+    content: "\e[?25l\e[H╫ squish               31/81\e[?25h"
+  - delay: 501
+    content: "\e[?25l\e[H╪ squish               31/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⊶ toggle               32/81\e[?25h"
+  - delay: 491
+    content: "\e[?25l\e[H▫ toggle2              33/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H□ toggle3              34/81\e[?25h"
+  - delay: 501
+    content: "\e[?25l\e[H■ toggle3              34/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H■ toggle4              35/81\e[?25h"
+  - delay: 242
+    content: "\e[?25l\e[H□ toggle4              35/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H▮ toggle5              36/81\e[?25h"
+  - delay: 501
+    content: "\e[?25l\e[Hဝ toggle6              37/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H⦾ toggle7              38/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H◍ toggle8              39/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H◉ toggle9              40/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H◎ toggle9              40/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H㊂ toggle10             41/81\e[?25h"
+  - delay: 325
+    content: "\e[?25l\e[H㊀ toggle10             41/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H⧇ toggle11             42/81\e[?25h"
+  - delay: 500
+    content: "\e[?25l\e[H⧆ toggle11             42/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H☗ toggle12             43/81\e[?25h"
+  - delay: 493
+    content: "\e[?25l\e[H☖ toggle12             43/81\e[?25h"
+  - delay: 19
+    content: "\e[?25l\e[H= toggle13             44/81\e[?25h"
+  - delay: 314
+    content: "\e[?25l\e[H* toggle13             44/81\e[?25h"
+  - delay: 168
+    content: "\e[?25l\e[H← arrow                45/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H↖ arrow                45/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H↑ arrow                45/81\e[?25h"
+  - delay: 137
+    content: "\e[?25l\e[H↗ arrow                45/81\e[?25h"
+  - delay: 124
+    content: "\e[?25l\e[H⠀ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠁ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠄ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠆ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡁ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡃ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡅ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠈ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠊ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠍ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠏ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡊ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡌ dots8Bit             46/81\e[?25h"
+  - delay: 19
+    content: "\e[?25l\e[H⡍ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠐ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠒ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠔ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠗ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡑ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡔ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡖ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠙ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠛ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠝ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡘ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡚ dots8Bit             46/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H⡛ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡝ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡟ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠢ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠤ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠦ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡠ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡣ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡥ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠨ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠪ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠬ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠯ dots8Bit             46/81\e[?25h"
+  - delay: 20
+    content: "\e[?25l\e[H⡨ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡪ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡭ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡯ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⠱ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠴ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠶ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡱ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⡳ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡵ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠸ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠺ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H⠼ dots8Bit             46/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H⠽ dots8Bit             46/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H⡸ dots8Bit             46/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H- line                 47/81\e[?25h"
+  - delay: 243
+    content: "\e[?25l\e[H\\ line                 47/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H⠂ line2                48/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H- line2                48/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H– line2                48/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H— line2                48/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H.   simpleDots           49/81\e[?25h"
+  - delay: 243
+    content: "\e[?25l\e[H..  simpleDots           49/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H.   simpleDotsScrolling  50/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H..  simpleDotsScrolling  50/81\e[?25h"
+  - delay: 178
+    content: "\e[?25l\e[H... simpleDotsScrolling  50/81\e[?25h"
+  - delay: 157
+    content: "\e[?25l\e[H⬆️  arrow2               51/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H↗️  arrow2               51/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H➡️  arrow2               51/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H↘️  arrow2               51/81\e[?25h"
+  - delay: 124
+    content: "\e[?25l\e[H▹▹▹▹▹ arrow3               52/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H▸▹▹▹▹ arrow3               52/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H▹▸▹▹▹ arrow3               52/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H▹▹▸▹▹ arrow3               52/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H[    ] bouncingBar          53/81\e[?25h"
+  - delay: 65
+    content: "\e[?25l\e[H[=   ] bouncingBar          53/81\e[?25h"
+  - delay: 66
+    content: "\e[?25l\e[H[==  ] bouncingBar          53/81\e[?25h"
+  - delay: 67
+    content: "\e[?25l\e[H[=== ] bouncingBar          53/81\e[?25h"
+  - delay: 66
+    content: "\e[?25l\e[H[ ===] bouncingBar          53/81\e[?25h"
+  - delay: 67
+    content: "\e[?25l\e[H[  ==] bouncingBar          53/81\e[?25h"
+  - delay: 67
+    content: "\e[?25l\e[H[   =] bouncingBar          53/81\e[?25h"
+  - delay: 66
+    content: "\e[?25l\e[H[    ] bouncingBar          53/81\e[?25h"
+  - delay: 28
+    content: "\e[?25l\e[H( ●    ) bouncingBall         54/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H(  ●   ) bouncingBall         54/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H(   ●  ) bouncingBall         54/81\e[?25h"
+  - delay: 104
+    content: "\e[?25l\e[H(    ● ) bouncingBall         54/81\e[?25h"
+  - delay: 101
+    content: "\e[?25l\e[H(     ●) bouncingBall         54/81\e[?25h"
+  - delay: 94
+    content: "\e[?25l\e[H\U0001F604  smiley               55/81\e[?25h"
+  - delay: 501
+    content: "\e[?25l\e[H\U0001F648  monkey               56/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H\U0001F648  monkey               56/81\e[?25h"
+  - delay: 250
+    content: "\e[?25l\e[H\U0001F49B  hearts               57/81\e[?25h"
+  - delay: 200
+    content: "\e[?25l\e[H\U0001F499  hearts               57/81\e[?25h"
+  - delay: 204
+    content: "\e[?25l\e[H\U0001F49C  hearts               57/81\e[?25h"
+  - delay: 96
+    content: "\e[?25l\e[H\U0001F55B  clock                58/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H\U0001F550  clock                58/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H\U0001F551  clock                58/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H\U0001F552  clock                58/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H\U0001F553  clock                58/81\e[?25h"
+  - delay: 83
+    content: "\e[?25l\e[H\U0001F554  clock                58/81\e[?25h"
+  - delay: 84
+    content: "\e[?25l\e[H\U0001F555  clock                58/81\e[?25h"
+  - delay: 23
+    content: "\e[?25l\e[H\U0001F30D  earth                59/81\e[?25h"
+  - delay: 311
+    content: "\e[?25l\e[H\U0001F30E  earth                59/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 27
+    content: "\e[?25l\e[H██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H██████▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H██████▁▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H███████▁▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H████████▁▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H█████████▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H█████████▁▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 18
+    content: "\e[?25l\e[H██████████▁▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 21
+    content: "\e[?25l\e[H███████████▁▁▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H█████████████▁▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H██████████████▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H██████████████▁▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁██████████████▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁██████████████▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H▁██████████████▁▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁██████████████▁▁▁▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁██████████████▁▁▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁█████████████▁▁▁ material             60/81\e[?25h"
+  - delay: 10
+    content: "\e[?25l\e[H▁▁▁▁██████████████▁▁ material             60/81\e[?25h"
+  - delay: 25
+    content: "\e[?25l\e[H▁▁▁▁██████████████▁▁ material             60/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H▁▁▁▁▁██████████████▁ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁▁██████████████▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁██████████████▁ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁██████████████ material             60/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H▁▁▁▁▁▁██████████████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁█████████████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁█████████████ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁████████████ material             60/81\e[?25h"
+  - delay: 11
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁████████████ material             60/81\e[?25h"
+  - delay: 27
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁███████████ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁███████████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁██████████ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁██████████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁▁▁████████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁▁▁▁███████ material             60/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁▁▁▁▁██████ material             60/81\e[?25h"
+  - delay: 8
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████ material             60/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁███ material             60/81\e[?25h"
+  - delay: 25
+    content: "\e[?25l\e[H\U0001F311  moon                 61/81\e[?25h"
+  - delay: 127
+    content: "\e[?25l\e[H\U0001F312  moon                 61/81\e[?25h"
+  - delay: 126
+    content: "\e[?25l\e[H\U0001F313  moon                 61/81\e[?25h"
+  - delay: 125
+    content: "\e[?25l\e[H\U0001F314  moon                 61/81\e[?25h"
+  - delay: 123
+    content: "\e[?25l\e[H\U0001F6B6  runner               62/81\e[?25h"
+  - delay: 501
+    content: "\e[?25l\e[H▐⠂       ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐⠈       ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐ ⠂      ▌ pong                 63/81\e[?25h"
+  - delay: 38
+    content: "\e[?25l\e[H▐ ⠠      ▌ pong                 63/81\e[?25h"
+  - delay: 33
+    content: "\e[?25l\e[H▐  ⡀     ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐  ⠠     ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐   ⠂    ▌ pong                 63/81\e[?25h"
+  - delay: 33
+    content: "\e[?25l\e[H▐   ⠈    ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐    ⠂   ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐    ⠠   ▌ pong                 63/81\e[?25h"
+  - delay: 37
+    content: "\e[?25l\e[H▐     ⡀  ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐     ⠠  ▌ pong                 63/81\e[?25h"
+  - delay: 33
+    content: "\e[?25l\e[H▐      ⠂ ▌ pong                 63/81\e[?25h"
+  - delay: 34
+    content: "\e[?25l\e[H▐      ⠈ ▌ pong                 63/81\e[?25h"
+  - delay: 33
+    content: "\e[?25l\e[H▐       ⠂▌ pong                 63/81\e[?25h"
+  - delay: 22
+    content: "\e[?25l\e[H▐|\\____________▌ shark                64/81\e[?25h"
+  - delay: 38
+    content: "\e[?25l\e[H▐_|\\___________▌ shark                64/81\e[?25h"
+  - delay: 53
+    content: "\e[?25l\e[H▐__|\\__________▌ shark                64/81\e[?25h"
+  - delay: 38
+    content: "\e[?25l\e[H▐___|\\_________▌ shark                64/81\e[?25h"
+  - delay: 39
+    content: "\e[?25l\e[H▐____|\\________▌ shark                64/81\e[?25h"
+  - delay: 46
+    content: "\e[?25l\e[H▐_____|\\_______▌ shark                64/81\e[?25h"
+  - delay: 38
+    content: "\e[?25l\e[H▐______|\\______▌ shark                64/81\e[?25h"
+  - delay: 39
+    content: "\e[?25l\e[H▐_______|\\_____▌ shark                64/81\e[?25h"
+  - delay: 45
+    content: "\e[?25l\e[H▐________|\\____▌ shark                64/81\e[?25h"
+  - delay: 38
+    content: "\e[?25l\e[H▐_________|\\___▌ shark                64/81\e[?25h"
+  - delay: 39
+    content: "\e[?25l\e[H▐__________|\\__▌ shark                64/81\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H▐___________|\\_▌ shark                64/81\e[?25h"
+  - delay: 39
+    content: "\e[?25l\e[H▐____________|\\▌ shark                64/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[Hd dqpb                 65/81\e[?25h"
+  - delay: 246
+    content: "\e[?25l\e[Hq dqpb                 65/81\e[?25h"
+  - delay: 249
+    content: "\e[?25l\e[H☀️  weather              66/81\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H☀️  weather              66/81\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H☀️  weather              66/81\e[?25h"
+  - delay: 43
+    content: "\e[?25l\e[H\U0001F324  weather              66/81\e[1C\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H⛅️  weather              66/81\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H\U0001F325  weather              66/81\e[1C\e[?25h"
+  - delay: 43
+    content: "\e[?25l\e[H☁️  weather              66/81\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H\U0001F327  weather              66/81\e[1C\e[?25h"
+  - delay: 43
+    content: "\e[?25l\e[H\U0001F328  weather              66/81\e[1C\e[?25h"
+  - delay: 44
+    content: "\e[?25l\e[H\U0001F327  weather              66/81\e[1C\e[?25h"
+  - delay: 50
+    content: "\e[?25l\e[H\U0001F328  weather              66/81\e[1C\e[?25h"
+  - delay: 43
+    content: "\e[?25l\e[H\U0001F327  weather              66/81\e[1C\e[?25h"
+  - delay: 18
+    content: "\e[?25l\e[H\U0001F332 christmas            67/81\e[?25h"
+  - delay: 497
+    content: "\e[?25l\e[H\U0001F384 christmas            67/81\e[?25h"
+  - delay: 9
+    content: "\e[?25l\e[H،   grenade              68/81\e[?25h"
+  - delay: 65
+    content: "\e[?25l\e[H′   grenade              68/81\e[?25h"
+  - delay: 78
+    content: "\e[?25l\e[H ´  grenade              68/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H ‾  grenade              68/81\e[?25h"
+  - delay: 82
+    content: "\e[?25l\e[H  ⸌ grenade              68/81\e[?25h"
+  - delay: 71
+    content: "\e[?25l\e[H  ⸊ grenade              68/81\e[?25h"
+  - delay: 72
+    content: "\e[?25l\e[H  | grenade              68/81\e[?25h"
+  - delay: 52
+    content: "\e[?25l\e[H∙∙∙ point                69/81\e[?25h"
+  - delay: 201
+    content: "\e[?25l\e[H●∙∙ point                69/81\e[?25h"
+  - delay: 212
+    content: "\e[?25l\e[H∙●∙ point                69/81\e[?25h"
+  - delay: 87
+    content: "\e[?25l\e[H- layer                70/81\e[?25h"
+  - delay: 334
+    content: "\e[?25l\e[H= layer                70/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[Hρββββββ betaWave             71/81\e[?25h"
+  - delay: 151
+    content: "\e[?25l\e[Hβρβββββ betaWave             71/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[Hββρββββ betaWave             71/81\e[?25h"
+  - delay: 143
+    content: "\e[?25l\e[Hβββρβββ betaWave             71/81\e[?25h"
+  - delay: 64
+    content: "\e[?25l\e[H\U0001F918  fingerDance          72/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H\U0001F91F  fingerDance          72/81\e[?25h"
+  - delay: 167
+    content: "\e[?25l\e[H\U0001F596  fingerDance          72/81\e[?25h"
+  - delay: 166
+    content: "\e[?25l\e[H✋  fingerDance          72/81\e[?25h"
+  - delay: 17
+    content: "\e[?25l\e[H\U0001F91C　　　　\U0001F91B  fistBump             73/81\e[?25h"
