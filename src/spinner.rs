@@ -32,9 +32,9 @@ pub struct Spinner {
     message: String,
 }
 
-impl Spinners {
-    pub fn into_spinner(self) -> Result<Spinner, Error> {
-        Spinner::new(self, "")
+impl Drop for Spinner {
+    fn drop(&mut self) {
+        self.stop();
     }
 }
 
@@ -186,5 +186,11 @@ impl Spinner {
                 .send(Event::SetMessage(self.message.clone()))
                 .unwrap();
         }
+    }
+}
+
+impl Spinners {
+    pub fn into_spinner(self) -> Result<Spinner, Error> {
+        Spinner::new(self, "")
     }
 }
