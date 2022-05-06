@@ -60,7 +60,7 @@ impl Spinner {
     /// let sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     /// ```
-    pub fn new<S: Into<String>>(spinner: Spinners, message: S) -> Result<Self, Error> {
+    pub fn new<S: std::fmt::Display>(spinner: Spinners, message: S) -> Result<Self, Error> {
         let frames = spinner.get_frames();
 
         if let Ok(frames) = frames {
@@ -68,7 +68,7 @@ impl Spinner {
                 spinner,
                 frames: frames.clone(),
                 interval: 1000 / frames.len() as u64,
-                message: message.into(),
+                message: message.to_string(),
                 sender: None,
             })
         } else {
@@ -128,10 +128,24 @@ impl Spinner {
         }
     }
 
-    pub fn stop_with_message<S: Into<String>>(&self, message: S) {
+    /// Stops the spinner and replaces it with the given message
+    ///
+    /// # Example:
+    ///
+    /// ```
+    /// use spinners_rs::Spinners;
+    ///
+    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// sp.start();
+    ///
+    /// thread::sleep(Duration::from_millis(1000));
+    ///
+    /// sp.stop_with_message("We've finished that thing!");
+    /// ```
+    pub fn stop_with_message<S: std::fmt::Display>(&self, message: S) {
         if let Some(sender) = &self.sender {
             sender.send(Event::Stop).unwrap();
-            print!("\r{}", message.into());
+            print!("\r{}", message);
             stdout().flush().unwrap();
         }
     }
@@ -187,8 +201,8 @@ impl Spinner {
     ///
     /// sp.stop();
     /// ```
-    pub fn set_message<S: Into<String>>(&mut self, message: S) {
-        self.message = message.into();
+    pub fn set_message<S: std::fmt::Display>(&mut self, message: S) {
+        self.message = message.to_string();
         if let Some(sender) = &self.sender {
             sender
                 .send(Event::SetMessage(self.message.clone()))

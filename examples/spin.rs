@@ -1,5 +1,6 @@
 use std::{thread, time::Duration};
 
+use colored::Colorize;
 use spinners_rs::{Spinner, Spinners};
 
 fn main() {
@@ -8,5 +9,5 @@ fn main() {
     sp.start();
 
     thread::sleep(Duration::from_secs(3));
-    sp.stop_with_message("Poggies");
+    sp.stop_with_message("Poggies".red());
 }
