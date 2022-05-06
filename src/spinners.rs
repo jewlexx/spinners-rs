@@ -16,5 +16,7 @@ extern "C" {
 }
 
 fn spin() {
-    unsafe {}
+    unsafe {
+        let sp = Spinner::new();
+    }
 }
