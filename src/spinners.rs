@@ -3,6 +3,63 @@ use std::collections::HashMap;
 use lazy_static::lazy_static;
 use maplit::hashmap;
 
+struct Spinner {
+    name: String,
+    frames: Vec<char>,
+}
+
+impl Spinner {
+    pub fn new() -> Self {}
+}
+
+pub enum Spinner {
+    Dots,
+    Dots2,
+    Dots3,
+    Dots4,
+    Dots5,
+    Dots6,
+    Dots7,
+    Dots8,
+    Dots9,
+    Dots10,
+    Dots11,
+    Pipe,
+    Star,
+    Star2,
+    Flip,
+    Hamburger,
+    GrowVertical,
+    GrowHorizontal,
+    Balloon,
+    Balloon2,
+    Noise,
+    Bounce,
+    BoxBounce,
+    BoxBounce2,
+    Triangle,
+    Arc,
+    Circle,
+    SquareCorners,
+    CircleQuaters,
+    CircleHalves,
+    Squish,
+    Toggle,
+    Toggle2,
+    Toggle3,
+    Toggle4,
+    Toggle5,
+    Toggle6,
+    Toggle7,
+    Toggle8,
+    Toggle9,
+    Toggle10,
+    Toggle11,
+    Toggle12,
+    Toggle13,
+    Arrow,
+}
+
 lazy_static! {
     static ref SPINNER_MAP: HashMap<&'static str, &'static str> = {
         hashmap! {
