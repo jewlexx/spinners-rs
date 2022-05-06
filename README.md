@@ -5,6 +5,8 @@
 [![Docs](https://img.shields.io/badge/docs-👌-4EC329.svg?)](https://docs.rs/spinners-rs/)
 [![Downloads](https://img.shields.io/crates/d/spinners-rs.svg)](https://crates.io/crates/spinners-rs)
 
+82 fun and easy to use, lightweight, spinners for Rust, with minimal overhead.
+
 ![Demo Gif](./demo/render.gif)
 
 ## Install
