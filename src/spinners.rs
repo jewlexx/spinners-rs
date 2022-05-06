@@ -61,6 +61,12 @@ impl Spinner {
 
         self.sender = Some(sender);
     }
+
+    pub fn stop(&self) {
+        if let Some(sender) = &self.sender {
+            sender.send(()).unwrap();
+        }
+    }
 }
 
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
