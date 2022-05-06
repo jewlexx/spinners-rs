@@ -77,6 +77,8 @@ impl Spinner {
     }
 
     /// Start the spinner
+    ///
+    /// Explained more in depth in the [`Spinner::new`] function.
     pub fn start(&mut self) {
         let spinner = self.clone();
 
@@ -129,6 +131,7 @@ impl Spinner {
     /// Updates the frame interval
     ///
     /// This changes how fast each frame comes up
+    ///
     /// This can be changed before the spinner is started or after
     ///
     /// Basic Usage:
