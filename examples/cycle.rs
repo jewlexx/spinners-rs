@@ -1,6 +1,6 @@
 use std::{thread, time::Duration};
 
-use spinners_rs::{Spinner, Spinners};
+use spinners_rs::Spinners;
 
 use strum::IntoEnumIterator;
 
