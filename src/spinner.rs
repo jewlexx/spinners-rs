@@ -43,7 +43,7 @@ impl Spinner {
     ///
     /// # Examples
     ///
-    /// Basic Usage:
+    /// ## Basic Usage:
     ///
     /// ```
     /// use spinners_rs::{Spinner, Spinners};
@@ -52,7 +52,7 @@ impl Spinner {
     /// sp.start();
     /// ```
     ///
-    /// No Message:
+    /// ## No Message:
     ///
     /// ```
     /// use spinners_rs::Spinners;
@@ -110,7 +110,7 @@ impl Spinner {
 
     /// Stops the spinner from running
     ///
-    /// Basic Usage:
+    /// # Example:
     ///
     /// ```
     /// use spinners_rs::Spinners;
@@ -134,7 +134,7 @@ impl Spinner {
     ///
     /// This can be changed before the spinner is started or after
     ///
-    /// Basic Usage:
+    /// # Example:
     ///
     /// ```
     /// use spinners_rs::Spinners;
@@ -163,7 +163,7 @@ impl Spinner {
     ///
     /// Similar to [`Spinner::set_interval`], this can be set before or after a spinner is started
     ///
-    /// Basic Usage:
+    /// # Example :
     ///
     /// ```
     /// use spinners_rs::Spinners;
