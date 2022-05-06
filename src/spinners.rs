@@ -4,6 +4,7 @@ use lazy_static::lazy_static;
 use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
 
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct Spinner {
     pub spinner: Spinners,
     pub frames: Vec<char>,
@@ -30,7 +31,7 @@ impl Spinner {
     }
 }
 
-#[derive(Debug, Clone, EnumIter, Display, EnumString)]
+#[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
 pub enum Spinners {
     Dots,
     Dots2,
