@@ -110,6 +110,8 @@ impl Spinner {
 
     /// Stops the spinner from running
     ///
+    /// Alternatively you can use the [`Spinner::stop_with_message`] or [`Spinner::stop_with_symbol`] function.
+    ///
     /// # Example:
     ///
     /// ```
