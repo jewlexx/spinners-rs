@@ -128,6 +128,14 @@ impl Spinner {
         }
     }
 
+    pub fn stop_with_message<S: Into<String>>(&self, message: S) {
+        if let Some(sender) = &self.sender {
+            sender.send(Event::Stop).unwrap();
+            print!("\r{}", message.into());
+            stdout().flush().unwrap();
+        }
+    }
+
     /// Updates the frame interval
     ///
     /// This changes how fast each frame comes up

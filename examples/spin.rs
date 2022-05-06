@@ -8,4 +8,5 @@ fn main() {
     sp.start();
 
     thread::sleep(Duration::from_secs(3));
+    sp.stop_with_message("Poggies");
 }
