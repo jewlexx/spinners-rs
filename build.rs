@@ -7,5 +7,5 @@ fn main() {
         .flag_if_supported("-Werror")
         .flag_if_supported("-Wall")
         .flag_if_supported("-pedantic")
-        .compile("spinners")
+        .compile("spinners.a")
 }
