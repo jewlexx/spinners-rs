@@ -1,84 +1,8 @@
-use std::{
-    collections::HashMap,
-    io::{stdout, Write},
-    sync::mpsc::{channel, Sender, TryRecvError},
-    thread,
-    time::Duration,
-};
+use std::collections::HashMap;
 
 use lazy_static::lazy_static;
 use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
-use thiserror::Error as ThisError;
-
-#[derive(Debug, Clone)]
-pub struct Spinner {
-    pub spinner: Spinners,
-    interval: u64,
-    frames: Vec<char>,
-    sender: Option<Sender<()>>,
-    message: String,
-}
-
-#[derive(Debug, Clone, ThisError, Display)]
-pub enum Error {
-    UnknownSpinner(String),
-}
-
-impl Spinner {
-    pub fn new<S: Into<String>>(spinner: Spinners, message: S) -> Result<Self, Error> {
-        let frames = SPINNER_MAP.get(&spinner.to_string());
-
-        if let Some(frames) = frames {
-            let frames: Vec<char> = frames.chars().collect();
-
-            Ok(Self {
-                spinner,
-                frames: frames.clone(),
-                interval: 1000 / frames.len() as u64,
-                message: message.into(),
-                sender: None,
-            })
-        } else {
-            Err(Error::UnknownSpinner(spinner.to_string()))
-        }
-    }
-
-    pub fn set_interval(&mut self, interval: u64) {
-        self.interval = interval;
-    }
-
-    pub fn start(&mut self) {
-        let interval = self.interval;
-        let frames = self.frames.clone();
-        let message = self.message.clone();
-
-        let (sender, recv) = channel::<()>();
-
-        thread::spawn(move || 'outer: loop {
-            let mut stdout = stdout();
-
-            for frame in frames.iter() {
-                match recv.try_recv() {
-                    Ok(_) | Err(TryRecvError::Disconnected) => break 'outer,
-                    _ => {}
-                };
-
-                print!("\r{} {}", frame, message);
-                stdout.flush().unwrap();
-                thread::sleep(Duration::from_millis(interval));
-            }
-        });
-
-        self.sender = Some(sender);
-    }
-
-    pub fn stop(&self) {
-        if let Some(sender) = &self.sender {
-            sender.send(()).unwrap();
-        }
-    }
-}
 
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
 #[strum(serialize_all = "lowercase")]
@@ -131,53 +55,53 @@ pub enum Spinners {
 }
 
 lazy_static! {
-    static ref SPINNER_MAP: HashMap<String, &'static str> = {
+    pub(crate) static ref SPINNER_MAP: HashMap<String, &'static str> = {
         hashmap! {
-        "dots".into() => "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏",
-        "dots2".into() => "⣾⣽⣻⢿⡿⣟⣯⣷",
-        "dots3".into() => "⠋⠙⠚⠞⠖⠦⠴⠲⠳⠓",
-        "dots4".into() => "⠄⠆⠇⠋⠙⠸⠰⠠⠰⠸⠙⠋⠇⠆",
-        "dots5".into() => "⠋⠙⠚⠒⠂⠂⠒⠲⠴⠦⠖⠒⠐⠐⠒⠓⠋",
-        "dots6".into() => "⠁⠉⠙⠚⠒⠂⠂⠒⠲⠴⠤⠄⠄⠤⠴⠲⠒⠂⠂⠒⠚⠙⠉⠁",
-        "dots7".into() => "⠈⠉⠋⠓⠒⠐⠐⠒⠖⠦⠤⠠⠠⠤⠦⠖⠒⠐⠐⠒⠓⠋⠉⠈",
-        "dots8".into() => "⠁⠁⠉⠙⠚⠒⠂⠂⠒⠲⠴⠤⠄⠄⠤⠠⠠⠤⠦⠖⠒⠐⠐⠒⠓⠋⠉⠈⠈",
-        "dots9".into() => "⢹⢺⢼⣸⣇⡧⡗⡏",
-        "dots10".into() => "⢄⢂⢁⡁⡈⡐⡠",
-        "dots11".into() => "⠁⠂⠄⡀⢀⠠⠐⠈",
-        "pipe".into() => "┤┘┴└├┌┬┐",
-        "star".into() => "✶✸✹✺✹✷",
-        "star2".into() => "+x*",
-        "flip".into() => "___-``'´-___",
-        "hamburger".into() => "☱☲☴",
-        "growVertical".into() => "▁▃▄▅▆▇▆▅▄▃",
-        "growHorizontal".into() => "▏▎▍▌▋▊▉▊▋▌▍▎",
-        "balloon".into() => ".into() .oO@* ",
-        "balloon2".into() => ".oO°Oo.",
-        "noise".into() => "▓▒░",
-        "bounce".into() => "⠁⠂⠄⠂",
-        "boxBounce".into() => "▖▘▝▗",
-        "boxBounce2".into() => "▌▀▐▄",
-        "triangle".into() => "◢◣◤◥",
-        "arc".into() => "◜◠◝◞◡◟",
-        "circle".into() => "◡⊙◠",
-        "squareCorners".into() => "◰◳◲◱",
-        "circleQuarters".into() => "◴◷◶◵",
-        "circleHalves".into() => "◐◓◑◒",
-        "squish".into() => "╫╪",
-        "toggle".into() => "⊶⊷",
-        "toggle2".into() => "▫▪",
-        "toggle3".into() => "□■",
-        "toggle4".into() => "■□▪▫",
-        "toggle5".into() => "▮▯",
-        "toggle6".into() => "ဝ၀",
-        "toggle7".into() => "⦾⦿",
-        "toggle8".into() => "◍◌",
-        "toggle9".into() => "◉◎",
-        "toggle10".into() => "㊂㊀㊁",
-        "toggle11".into() => "⧇⧆",
-        "toggle12".into() => "☗☖",
-        "toggle13".into() => "=*-",
-        "arrow".into() => "←↖↑↗→↘↓↙"
+            "dots".into() => "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏",
+            "dots2".into() => "⣾⣽⣻⢿⡿⣟⣯⣷",
+            "dots3".into() => "⠋⠙⠚⠞⠖⠦⠴⠲⠳⠓",
+            "dots4".into() => "⠄⠆⠇⠋⠙⠸⠰⠠⠰⠸⠙⠋⠇⠆",
+            "dots5".into() => "⠋⠙⠚⠒⠂⠂⠒⠲⠴⠦⠖⠒⠐⠐⠒⠓⠋",
+            "dots6".into() => "⠁⠉⠙⠚⠒⠂⠂⠒⠲⠴⠤⠄⠄⠤⠴⠲⠒⠂⠂⠒⠚⠙⠉⠁",
+            "dots7".into() => "⠈⠉⠋⠓⠒⠐⠐⠒⠖⠦⠤⠠⠠⠤⠦⠖⠒⠐⠐⠒⠓⠋⠉⠈",
+            "dots8".into() => "⠁⠁⠉⠙⠚⠒⠂⠂⠒⠲⠴⠤⠄⠄⠤⠠⠠⠤⠦⠖⠒⠐⠐⠒⠓⠋⠉⠈⠈",
+            "dots9".into() => "⢹⢺⢼⣸⣇⡧⡗⡏",
+            "dots10".into() => "⢄⢂⢁⡁⡈⡐⡠",
+            "dots11".into() => "⠁⠂⠄⡀⢀⠠⠐⠈",
+            "pipe".into() => "┤┘┴└├┌┬┐",
+            "star".into() => "✶✸✹✺✹✷",
+            "star2".into() => "+x*",
+            "flip".into() => "___-``'´-___",
+            "hamburger".into() => "☱☲☴",
+            "growVertical".into() => "▁▃▄▅▆▇▆▅▄▃",
+            "growHorizontal".into() => "▏▎▍▌▋▊▉▊▋▌▍▎",
+            "balloon".into() => ".into() .oO@* ",
+            "balloon2".into() => ".oO°Oo.",
+            "noise".into() => "▓▒░",
+            "bounce".into() => "⠁⠂⠄⠂",
+            "boxBounce".into() => "▖▘▝▗",
+            "boxBounce2".into() => "▌▀▐▄",
+            "triangle".into() => "◢◣◤◥",
+            "arc".into() => "◜◠◝◞◡◟",
+            "circle".into() => "◡⊙◠",
+            "squareCorners".into() => "◰◳◲◱",
+            "circleQuarters".into() => "◴◷◶◵",
+            "circleHalves".into() => "◐◓◑◒",
+            "squish".into() => "╫╪",
+            "toggle".into() => "⊶⊷",
+            "toggle2".into() => "▫▪",
+            "toggle3".into() => "□■",
+            "toggle4".into() => "■□▪▫",
+            "toggle5".into() => "▮▯",
+            "toggle6".into() => "ဝ၀",
+            "toggle7".into() => "⦾⦿",
+            "toggle8".into() => "◍◌",
+            "toggle9".into() => "◉◎",
+            "toggle10".into() => "㊂㊀㊁",
+            "toggle11".into() => "⧇⧆",
+            "toggle12".into() => "☗☖",
+            "toggle13".into() => "=*-",
+            "arrow".into() => "←↖↑↗→↘↓↙"
         }
     };
 }
