@@ -24,6 +24,12 @@ pub enum Error {
     UnknownSpinner(String),
 }
 
+impl Spinners {
+    pub fn into_spinner(self) -> Result<Spinner, Error> {
+        Spinner::new(self, "")
+    }
+}
+
 impl Spinner {
     pub fn new<S: Into<String>>(spinner: Spinners, message: S) -> Result<Self, Error> {
         let frames = SPINNER_MAP.get(&spinner.to_string());
@@ -45,6 +51,10 @@ impl Spinner {
 
     pub fn set_interval(&mut self, interval: u64) {
         self.interval = interval;
+    }
+
+    pub fn set_message<S: Into<String>>(&mut self, message: S) {
+        self.message = message.into();
     }
 
     pub fn start(&mut self) {

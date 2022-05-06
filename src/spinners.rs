@@ -4,8 +4,10 @@ use lazy_static::lazy_static;
 use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
 
+use crate::Spinner;
+
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
-#[strum(serialize_all = "lowercase")]
+#[strum(serialize_all = "camelCase")]
 pub enum Spinners {
     Dots,
     Dots2,
@@ -85,7 +87,7 @@ lazy_static! {
             "arc".into() => "◜◠◝◞◡◟",
             "circle".into() => "◡⊙◠",
             "squareCorners".into() => "◰◳◲◱",
-            "circleQuarters".into() => "◴◷◶◵",
+            "circleQuaters".into() => "◴◷◶◵",
             "circleHalves".into() => "◐◓◑◒",
             "squish".into() => "╫╪",
             "toggle".into() => "⊶⊷",
