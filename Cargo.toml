@@ -1,5 +1,12 @@
 [package]
 name = "spinners-rs"
+authors = ["Juliette Cordor"]
+categories = ["command-line-interface"]
+homepage = "https://github.com/jewlexx/spinners-rs"
+include = ["src/**/*", "README.md"]
+keywords = ["spinner", "spin", "loader", "term", "terminal"]
+license = "MIT"
+repository = "https://github.com/jewlexx/spinners-rs.git"
 description = "A lightweight Spinner library for Rust"
 version = "1.0.0"
 edition = "2021"
