@@ -2,17 +2,20 @@ use std::collections::HashMap;
 
 use lazy_static::lazy_static;
 use maplit::hashmap;
+use strum::{Display, EnumIter, EnumString};
 
 struct Spinner {
-    name: String,
-    frames: Vec<char>,
+    pub spinner: Spinners,
+    pub frames: Vec<char>,
+    pub interval: u64,
 }
 
 impl Spinner {
     pub fn new() -> Self {}
 }
 
-pub enum Spinner {
+#[derive(Debug, Clone, EnumIter, Display, EnumString)]
+pub enum Spinners {
     Dots,
     Dots2,
     Dots3,
