@@ -76,6 +76,7 @@ impl Spinner {
         }
     }
 
+    /// Start the spinner
     pub fn start(&mut self) {
         let spinner = self.clone();
 
