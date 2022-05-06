@@ -9,6 +9,7 @@ use std::{
 use lazy_static::lazy_static;
 use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
+use thiserror::Error as ThisError;
 
 #[derive(Debug, Clone)]
 pub struct Spinner {
@@ -18,6 +19,7 @@ pub struct Spinner {
     sender: Option<Sender<()>>,
 }
 
+#[derive(Debug, Clone, ThisError, Display)]
 pub enum Error {
     UnknownSpinner(String),
 }
