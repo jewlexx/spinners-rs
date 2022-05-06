@@ -14,9 +14,10 @@ use thiserror::Error as ThisError;
 #[derive(Debug, Clone)]
 pub struct Spinner {
     pub spinner: Spinners,
-    pub frames: Vec<char>,
-    pub interval: u64,
+    interval: u64,
+    frames: Vec<char>,
     sender: Option<Sender<()>>,
+    message: String,
 }
 
 #[derive(Debug, Clone, ThisError, Display)]
@@ -25,14 +26,17 @@ pub enum Error {
 }
 
 impl Spinner {
-    pub fn new(spinner: Spinners, interval: Option<u64>) -> Result<Self, Error> {
+    pub fn new<S: Into<String>>(spinner: Spinners, message: S) -> Result<Self, Error> {
         let frames = SPINNER_MAP.get(&spinner.to_string());
 
         if let Some(frames) = frames {
+            let frames: Vec<char> = frames.chars().collect();
+
             Ok(Self {
                 spinner,
-                frames: frames.chars().collect(),
-                interval: interval.unwrap_or(100),
+                frames: frames.clone(),
+                interval: 1000 / frames.len() as u64,
+                message: message.into(),
                 sender: None,
             })
         } else {
@@ -40,9 +44,14 @@ impl Spinner {
         }
     }
 
+    pub fn set_interval(&mut self, interval: u64) {
+        self.interval = interval;
+    }
+
     pub fn start(&mut self) {
         let interval = self.interval;
         let frames = self.frames.clone();
+        let message = self.message.clone();
 
         let (sender, recv) = channel::<()>();
 
@@ -55,7 +64,7 @@ impl Spinner {
                     _ => {}
                 };
 
-                print!("\r{} {}", frame, "msg here");
+                print!("\r{} {}", frame, message);
                 stdout.flush().unwrap();
                 thread::sleep(Duration::from_millis(interval));
             }
@@ -72,6 +81,7 @@ impl Spinner {
 }
 
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
+#[strum(serialize_all = "lowercase")]
 pub enum Spinners {
     Dots,
     Dots2,
