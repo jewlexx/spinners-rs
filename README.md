@@ -19,7 +19,7 @@ See [Cargo page](https://crates.io/crates/spinners-rs)
 use std::{thread, time::Duration};
 use spinners_rs::{Spinner, Spinners};
 
-let mut sp = Spinner::new(Spinners::Arrow, "Doing Some Things...").unwrap();
+let mut sp = Spinner::new(Spinners::Arrow, "Doing Some Things...");
 
 sp.start();
 
