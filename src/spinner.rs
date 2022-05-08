@@ -238,6 +238,14 @@ impl Spinner {
                 .unwrap();
         }
     }
+
+    /// Gets the spinner name capitalizes the first letter.
+    pub fn get_name(&self) -> String {
+        let sp_string = self.spinner.to_string().chars().collect::<Vec<char>>();
+
+        sp_string[0].to_uppercase().to_string()
+            + sp_string[1..].iter().cloned().collect::<String>().as_str()
+    }
 }
 
 impl Spinners {
