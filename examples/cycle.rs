@@ -16,7 +16,7 @@ fn main() {
             " {:0>2}/{} {}{}",
             i + 1,
             len + 1,
-            sp.spinner,
+            sp.get_name(),
             WHITESPACE
         ));
         sp.start();
