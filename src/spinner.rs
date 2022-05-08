@@ -132,10 +132,16 @@ impl Spinner {
     ///
     /// sp.stop();
     /// ```
-    pub fn stop(&self) {
+    pub fn stop(&mut self) {
         if let Some(sender) = &self.sender {
-            sender.send(Event::Stop).unwrap();
+            let e = sender.send(Event::Stop).err();
+
+            if let Some(e) = e {
+                eprintln!("{}", e);
+            }
         }
+
+        self.sender = None;
     }
 
     /// Stops the spinner and replaces it with the given message
@@ -153,12 +159,10 @@ impl Spinner {
     ///
     /// sp.stop_with_message("We've finished that thing!");
     /// ```
-    pub fn stop_with_message<S: std::fmt::Display>(&self, message: S) {
-        if let Some(sender) = &self.sender {
-            sender.send(Event::Stop).unwrap();
-            print!("\r{}", message);
-            stdout().flush().unwrap();
-        }
+    pub fn stop_with_message<S: std::fmt::Display>(&mut self, message: S) {
+        self.stop();
+        print!("\r{}", message);
+        stdout().flush().unwrap();
     }
 
     /// Stops the spinner and replaces the current frame with the given symbol
@@ -176,12 +180,10 @@ impl Spinner {
     ///
     /// sp.stop_with_symbol('✓');
     /// ```
-    pub fn stop_with_symbol<S: std::fmt::Display>(&self, symbol: S) {
-        if let Some(sender) = &self.sender {
-            sender.send(Event::Stop).unwrap();
-            print!("\r{} {}", symbol, *self.message.lock());
-            stdout().flush().unwrap();
-        }
+    pub fn stop_with_symbol<S: std::fmt::Display>(&mut self, symbol: S) {
+        self.stop();
+        print!("\r{} {}", symbol, *self.message.lock());
+        stdout().flush().unwrap();
     }
 
     /// Updates the frame interval
