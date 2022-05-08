@@ -240,6 +240,15 @@ impl Spinner {
     }
 
     /// Gets the spinner name capitalizes the first letter.
+    ///
+    /// # Example:
+    ///
+    /// ```
+    /// use spinners_rs::Spinners;
+    ///
+    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// assert_eq!(sp.name(), "Dots");
+    /// ```
     pub fn get_name(&self) -> String {
         let sp_string = self.spinner.to_string().chars().collect::<Vec<char>>();
 
