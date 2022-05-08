@@ -60,19 +60,20 @@ impl Spinner {
     /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     /// ```
-    pub fn new<S: std::fmt::Display>(spinner: Spinners, message: S) -> Result<Self, Error> {
-        let frames = spinner.get_frames();
+    pub fn new<T, S>(spinner: T, message: S) -> Self
+    where
+        T: Into<Spinners> + Copy,
+        S: std::fmt::Display,
+    {
+        let spinner_type: Spinners = spinner.into();
+        let frames = spinner_type.get_frames();
 
-        if let Ok(frames) = frames {
-            Ok(Self {
-                spinner,
-                frames: frames.clone(),
-                interval: 1000 / frames.len() as u64,
-                message: message.to_string(),
-                sender: None,
-            })
-        } else {
-            Err(Error::UnknownSpinner(spinner.to_string()))
+        Self {
+            spinner: spinner.into(),
+            frames: frames.clone(),
+            interval: 1000 / frames.len() as u64,
+            message: message.to_string(),
+            sender: None,
         }
     }
 
@@ -257,8 +258,8 @@ impl Spinner {
     }
 }
 
-impl Spinners {
-    pub fn into_spinner(self) -> Result<Spinner, Error> {
-        Spinner::new(self, "")
+impl From<Spinners> for Spinner {
+    fn from(spinner: Spinners) -> Self {
+        Spinner::new(spinner, "")
     }
 }
