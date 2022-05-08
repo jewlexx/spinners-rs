@@ -1,16 +1,19 @@
 use std::{
     io::{stdout, Write},
-    sync::mpsc::{channel, Sender, TryRecvError},
+    sync::{
+        mpsc::{channel, Sender, TryRecvError},
+        Arc,
+    },
     thread,
     time::Duration,
 };
 
+use parking_lot::Mutex;
 use strum::Display;
 
 use crate::Spinners;
 
 #[derive(Debug, Clone, Display)]
-// TODO: Add mutex to the spinner interval and message so it can be updated from the thread
 /// All the different events that can occur
 pub enum Event {
     /// The spinner has finished.
@@ -19,7 +22,6 @@ pub enum Event {
     SetMessage(String),
     /// Update the spinner interval
     SetInterval(u64),
-    // SetFrames(Vec<char>),
 }
 
 #[derive(Debug, Clone)]
@@ -29,10 +31,10 @@ pub enum Event {
 pub struct Spinner {
     /// The enum variant used in this spinner
     pub spinner: Spinners,
-    interval: u64,
     frames: Vec<&'static str>,
     sender: Option<Sender<Event>>,
-    message: String,
+    interval: Arc<Mutex<u64>>,
+    message: Arc<Mutex<String>>,
 }
 
 impl Drop for Spinner {
@@ -74,8 +76,8 @@ impl Spinner {
         Self {
             spinner: spinner.into(),
             frames: frames.clone(),
-            interval: 1000 / frames.len() as u64,
-            message: message.to_string(),
+            interval: Arc::new(Mutex::new(1000 / frames.len() as u64)),
+            message: Arc::new(Mutex::new(message.to_string())),
             sender: None,
         }
     }
@@ -89,23 +91,24 @@ impl Spinner {
         let (sender, recv) = channel::<Event>();
 
         thread::spawn(move || 'outer: loop {
-            let mut interval = spinner.interval;
-            let mut message = spinner.message.clone();
             let frames = spinner.frames.clone();
 
             let mut stdout = stdout();
 
             for frame in frames.iter() {
+                let mut interval = spinner.interval.lock();
+                let mut message = spinner.message.lock();
+
                 match recv.try_recv() {
                     Ok(Event::Stop) | Err(TryRecvError::Disconnected) => break 'outer,
-                    Ok(Event::SetMessage(message_)) => message = message_,
-                    Ok(Event::SetInterval(interval_)) => interval = interval_,
+                    Ok(Event::SetMessage(message_)) => *message = message_,
+                    Ok(Event::SetInterval(interval_)) => *interval = interval_,
                     Err(TryRecvError::Empty) => {}
                 };
 
-                print!("\r{} {}", frame, message);
+                print!("\r{} {}", frame, *message);
                 stdout.flush().unwrap();
-                thread::sleep(Duration::from_millis(interval));
+                thread::sleep(Duration::from_millis(*interval));
             }
         });
 
@@ -176,7 +179,7 @@ impl Spinner {
     pub fn stop_with_symbol<S: std::fmt::Display>(&self, symbol: S) {
         if let Some(sender) = &self.sender {
             sender.send(Event::Stop).unwrap();
-            print!("\r{} {}", symbol, self.message);
+            print!("\r{} {}", symbol, *self.message.lock());
             stdout().flush().unwrap();
         }
     }
@@ -207,9 +210,10 @@ impl Spinner {
     /// sp.stop();
     /// ```
     pub fn set_interval(&mut self, interval: u64) {
-        self.interval = interval;
         if let Some(sender) = &self.sender {
             sender.send(Event::SetInterval(interval)).unwrap();
+        } else {
+            *self.interval.lock() = interval;
         }
     }
 
@@ -235,11 +239,10 @@ impl Spinner {
     /// sp.stop();
     /// ```
     pub fn set_message<S: std::fmt::Display>(&mut self, message: S) {
-        self.message = message.to_string();
         if let Some(sender) = &self.sender {
-            sender
-                .send(Event::SetMessage(self.message.clone()))
-                .unwrap();
+            sender.send(Event::SetMessage(message.to_string())).unwrap();
+        } else {
+            *self.message.lock() = message.to_string();
         }
     }
 
