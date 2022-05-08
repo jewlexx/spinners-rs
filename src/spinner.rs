@@ -6,19 +6,18 @@ use std::{
 };
 
 use strum::Display;
-use thiserror::Error as ThisError;
 
 use crate::Spinners;
 
-#[derive(Debug, Clone, ThisError, Display)]
-pub enum Error {
-    UnknownSpinner(String),
-}
-
 #[derive(Debug, Clone, Display)]
+// TODO: Add mutex to the spinner interval and message so it can be updated from the thread
+/// All the different events that can occur
 pub enum Event {
+    /// The spinner has finished.
     Stop,
+    /// Update the spinner message
     SetMessage(String),
+    /// Update the spinner interval
     SetInterval(u64),
     // SetFrames(Vec<char>),
 }
@@ -28,6 +27,7 @@ pub enum Event {
 ///
 /// This holds all the information for the actual spinners
 pub struct Spinner {
+    /// The enum variant used in this spinner
     pub spinner: Spinners,
     interval: u64,
     frames: Vec<&'static str>,

@@ -6,98 +6,189 @@ use strum::{Display, EnumIter, EnumString};
 
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
 #[strum(serialize_all = "camelCase")]
+/// The enum of all available spinners
+///
+/// Implements [`Display`], [`EnumString`] and [`EnumIter`] traits for easy usage.
+///
+/// Additionally implements [`Into<Spinner>`] trait to be easily converted into a [`Spinner`] struct.
+///
+/// [`Spinner`]: ./struct.Spinner.html
+///
+/// Can also be iterated over
 pub enum Spinners {
+    /// The Dots spinner
     Dots,
+    /// The Dots2 spinner
     Dots2,
+    /// The Dots3 spinner
     Dots3,
+    /// The Dots4 spinner
     Dots4,
+    /// The Dots5 spinner
     Dots5,
+    /// The Dots6 spinner
     Dots6,
+    /// The Dots7 spinner
     Dots7,
+    /// The Dots8 spinner
     Dots8,
+    /// The Dots9 spinner
     Dots9,
+    /// The Dots10 spinner
     Dots10,
+    /// The Dots11 spinner
     Dots11,
+    /// The Dots8Bit spinner
     Dots8Bit,
+    /// The Arrow spinner
     Arrow,
+    /// The Arrow2 spinner
     Arrow2,
+    /// The Arrow3 spinner
     Arrow3,
+    /// The BouncingBar spinner
     BouncingBar,
+    /// The BouncingBall spinner
     BouncingBall,
+    /// The Smiley spinner
     Smiley,
+    /// The Monkey spinner
     Monkey,
+    /// The Hearts spinner
     Hearts,
+    /// The Clock spinner
     Clock,
+    /// The Earth spinner
     Earth,
+    /// The Material spinner
     Material,
+    /// The Moon spinner
     Moon,
+    /// The Runner spinner
     Runner,
+    /// The Pong spinner
     Pong,
+    /// The Shark spinner
     Shark,
+    /// The Dqpb spinner
     Dqpb,
+    /// The Weather spinner
     Weather,
+    /// The Christmas spinner
     Christmas,
+    /// The Grenade spinner
     Grenade,
+    /// The Point spinner
     Point,
+    /// The Layer spinner
     Layer,
+    /// The BetaWave spinner
     BetaWave,
+    /// The FingerDance spinner
     FingerDance,
+    /// The FistBump spinner
     FistBump,
+    /// The SoccerHeader spinner
     SoccerHeader,
+    /// The Mindblown spinner
     Mindblown,
+    /// The Speaker spinner
     Speaker,
+    /// The OrangePulse spinner
     OrangePulse,
+    /// The BluePulse spinner
     BluePulse,
+    /// The OrangeBluePulse spinner
     OrangeBluePulse,
+    /// The TimeTravel spinner
     TimeTravel,
+    /// The Aesthetic Spinner
     Aesthetic,
+    /// The Pipe spinner
     Pipe,
+    /// The Star spinner
     Star,
+    /// The Star2 spinner
     Star2,
+    /// The Flip spinner
     Flip,
+    /// The Hamburger spinner
     Hamburger,
+    /// The GrowVertical spinner
     GrowVertical,
+    /// The GrowHorizontal spinner
     GrowHorizontal,
+    /// The Balloon spinner
     Balloon,
+    /// The Balloon2 spinner
     Balloon2,
+    /// The Noise spinner
     Noise,
+    /// The Bounce spinner
     Bounce,
+    /// The BoxBounce spinner
     BoxBounce,
+    /// The BoxBounce2 spinner
     BoxBounce2,
+    /// The Triangle Spinner
     Triangle,
+    /// The Arc spinner
     Arc,
+    /// The Circle spinner
     Circle,
+    /// The SquareCorners spinner
     SquareCorners,
+    /// The CircleQuarters spinner
     CircleQuaters,
+    /// The CircleHalves spinner
     CircleHalves,
+    /// The Squish spinner
     Squish,
+    /// The Toggle spinner
     Toggle,
+    /// The Toggle2 spinner
     Toggle2,
+    /// The Toggle3 spinner
     Toggle3,
+    /// The Toggle4 spinner
     Toggle4,
+    /// The Toggle5 spinner
     Toggle5,
+    /// The Toggle6 spinner
     Toggle6,
+    /// The Toggle7 spinner
     Toggle7,
+    /// The Toggle8 spinner
     Toggle8,
+    /// The Toggle9 spinner
     Toggle9,
+    /// The Toggle10 spinner
     Toggle10,
+    /// The Toggle11 spinner
     Toggle11,
+    /// The Toggle12 spinner
     Toggle12,
+    /// The Toggle13 spinner
     Toggle13,
+    /// The Line spinner
     Line,
+    /// The Line2 spinner
     Line2,
+    /// The SimpleDots spinner
     SimpleDots,
+    /// The SimpleDotsScrolling spinner
     SimpleDotsScrolling,
 }
 
 impl Spinners {
+    /// Gets the frames for any given spinner
     pub fn get_frames(&self) -> Vec<&'static str> {
         SPINNER_MAP.get(&self.to_string()).unwrap().to_vec()
     }
 }
 
 lazy_static! {
-    pub(crate) static ref SPINNER_MAP: HashMap<String, Vec<&'static str>> = {
+    static ref SPINNER_MAP: HashMap<String, Vec<&'static str>> = {
         hashmap! {
             r"dots".into() => vec![
             r"⠋",
