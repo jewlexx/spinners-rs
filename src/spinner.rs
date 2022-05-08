@@ -10,6 +10,7 @@ use strum::Display;
 use crate::Spinners;
 
 #[derive(Debug, Clone, Display)]
+// TODO: Add mutex to the spinner interval and message so it can be updated from the thread
 /// All the different events that can occur
 pub enum Event {
     /// The spinner has finished.
