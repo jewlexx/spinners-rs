@@ -21,7 +21,10 @@
 //! thread::sleep(Duration::from_secs(3));
 //! ```
 
+// All of the actual code is stored in other files
+// This is the main file that includes the code for the Spinner struct
 mod spinner;
+// This is the file that includes all the data for the spinners like the spinner enum and the frames
 mod spinners;
 
 pub use spinner::*;
