@@ -48,7 +48,7 @@ impl Spinner {
     /// ```
     /// use spinners_rs::{Spinner, Spinners};
     ///
-    /// let sp = Spinner::new(Spinners::Dots, "Doing some cool things...").unwrap();
+    /// let mut sp = Spinner::new(Spinners::Dots, "Doing some cool things...").unwrap();
     /// sp.start();
     /// ```
     ///
@@ -57,7 +57,7 @@ impl Spinner {
     /// ```
     /// use spinners_rs::Spinners;
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     /// ```
     pub fn new<S: std::fmt::Display>(spinner: Spinners, message: S) -> Result<Self, Error> {
@@ -116,8 +116,9 @@ impl Spinner {
     ///
     /// ```
     /// use spinners_rs::Spinners;
+    /// use std::{thread, time::Duration};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -136,8 +137,9 @@ impl Spinner {
     ///
     /// ```
     /// use spinners_rs::Spinners;
+    /// use std::{thread, time::Duration};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -158,8 +160,9 @@ impl Spinner {
     ///
     /// ```
     /// use spinners_rs::Spinners;
+    /// use std::{thread, time::Duration};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -184,8 +187,9 @@ impl Spinner {
     ///
     /// ```
     /// use spinners_rs::Spinners;
+    /// use std::{thread, time::Duration};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     ///
     /// // Will run through one iteration of frames
@@ -194,7 +198,7 @@ impl Spinner {
     /// sp.set_interval(500);
     ///
     /// // Will now run through two iterations of the frames
-    /// thread::sleep(Duration::from_mills(1000));
+    /// thread::sleep(Duration::from_millis(1000));
     ///
     /// sp.stop();
     /// ```
@@ -213,15 +217,16 @@ impl Spinner {
     ///
     /// ```
     /// use spinners_rs::Spinners;
+    /// use std::{thread, time::Duration};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
     ///
     /// sp.set_message("Doing some cool things...");
     ///
-    /// thread::sleep(Duration::from_mills(1000));
+    /// thread::sleep(Duration::from_millis(1000));
     ///
     /// sp.stop();
     /// ```
