@@ -254,6 +254,31 @@ impl Spinner {
         }
     }
 
+    /// Changes the spinner mid run
+    ///
+    /// This will change the spinner to the given one, allowing you to change the frames shown, on the current spinner without allocating a new variable and memory.
+    ///
+    /// # Example:
+    ///
+    /// ```
+    /// use std::{thread, time::Duration};
+    ///
+    /// use spinners_rs::{Spinner, Spinners};
+    ///
+    /// use strum::IntoEnumIterator;
+    ///
+    /// let sps = Spinners::iter().collect::<Vec<Spinners>>();
+    /// let len = sps.len();
+    /// let sp = sps.get(0).unwrap();
+    /// let mut spinner: Spinner = (*sp).into();
+    /// spinner.start();
+    ///
+    /// for (i, sp) in sps[1..].iter().enumerate() {
+    ///     spinner.set_spinner(*sp);
+    ///
+    ///     thread::sleep(Duration::from_millis(1000));
+    /// }
+    /// ```
     pub fn set_spinner(&mut self, spinner: Spinners) {
         self.spinner = spinner;
         if let Some(sender) = &self.sender {
