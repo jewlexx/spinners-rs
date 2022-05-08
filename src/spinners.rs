@@ -4,8 +4,6 @@ use lazy_static::lazy_static;
 use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
 
-use crate::Error;
-
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
 #[strum(serialize_all = "camelCase")]
 pub enum Spinners {
@@ -93,12 +91,8 @@ pub enum Spinners {
 }
 
 impl Spinners {
-    pub fn get_frames(&self) -> Result<Vec<&'static str>, Error> {
-        if let Some(frames) = SPINNER_MAP.get(&self.to_string()) {
-            Ok(frames.to_vec())
-        } else {
-            Err(Error::UnknownSpinner(self.to_string()))
-        }
+    pub fn get_frames(&self) -> Vec<&'static str> {
+        SPINNER_MAP.get(&self.to_string()).unwrap().to_vec()
     }
 }
 

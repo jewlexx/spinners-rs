@@ -4,7 +4,7 @@ use colored::Colorize;
 use spinners_rs::{Spinner, Spinners};
 
 fn main() {
-    let mut sp = Spinner::new(Spinners::Arrow, "yo").unwrap();
+    let mut sp = Spinner::new(Spinners::Arrow, "yo");
 
     sp.start();
 

@@ -1,6 +1,6 @@
 use std::{thread, time::Duration};
 
-use spinners_rs::Spinners;
+use spinners_rs::{Spinner, Spinners};
 
 use strum::IntoEnumIterator;
 
@@ -10,8 +10,8 @@ const WHITESPACE: &str = "                                                  ";
 fn main() {
     let sps = Spinners::iter().collect::<Vec<Spinners>>();
     let len = sps.len();
-    for i in 0..sps.len() {
-        let mut sp = sps.get(i).unwrap().into_spinner().unwrap();
+    for (i, sp) in sps.iter().enumerate() {
+        let mut sp: Spinner = (*sp).into();
         sp.set_message(format!(
             " {:0>2}/{} {}{}",
             i + 1,
