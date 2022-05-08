@@ -24,6 +24,9 @@ pub enum Event {
 }
 
 #[derive(Debug, Clone)]
+/// Main spinner struct
+///
+/// This holds all the information for the actual spinners
 pub struct Spinner {
     pub spinner: Spinners,
     interval: u64,
