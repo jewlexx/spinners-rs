@@ -46,18 +46,18 @@ impl Spinner {
     /// ## Basic Usage:
     ///
     /// ```
-    /// use spinners_rs::{Spinner, Spinners};
+    /// use spinners_rs::{Spinners, Spinner};
     ///
-    /// let mut sp = Spinner::new(Spinners::Dots, "Doing some cool things...").unwrap();
+    /// let mut sp = Spinner::new(Spinners::Dots, "Doing some cool things...");
     /// sp.start();
     /// ```
     ///
     /// ## No Message:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     /// ```
     pub fn new<T, S>(spinner: T, message: S) -> Self
@@ -116,10 +116,10 @@ impl Spinner {
     /// # Example:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     /// use std::{thread, time::Duration};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -137,10 +137,10 @@ impl Spinner {
     /// # Example:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     /// use std::{thread, time::Duration};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -160,10 +160,10 @@ impl Spinner {
     /// # Example:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     /// use std::{thread, time::Duration};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -187,10 +187,10 @@ impl Spinner {
     /// # Example:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     /// use std::{thread, time::Duration};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     ///
     /// // Will run through one iteration of frames
@@ -217,10 +217,10 @@ impl Spinner {
     /// # Example :
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     /// use std::{thread, time::Duration};
     ///
-    /// let mut sp = Spinners::Dots.into_spinner().unwrap();
+    /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     ///
     /// thread::sleep(Duration::from_millis(1000));
@@ -245,9 +245,9 @@ impl Spinner {
     /// # Example:
     ///
     /// ```
-    /// use spinners_rs::Spinners;
+    /// use spinners_rs::{Spinners, Spinner};
     ///
-    /// let sp = Spinners::Dots.into_spinner().unwrap();
+    /// let sp: Spinner = Spinners::Dots.into();
     /// assert_eq!(sp.get_name(), "Dots");
     /// ```
     pub fn get_name(&self) -> String {
