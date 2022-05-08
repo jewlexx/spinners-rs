@@ -21,6 +21,6 @@ fn main() {
         ));
         sp.start();
 
-        thread::sleep(Duration::from_millis(100));
+        thread::sleep(Duration::from_millis(1000));
     }
 }
