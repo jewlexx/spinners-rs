@@ -103,6 +103,7 @@ impl Spinner {
                     Ok(Event::Stop) | Err(TryRecvError::Disconnected) => break 'outer,
                     Ok(Event::SetMessage(message_)) => *message = message_,
                     Ok(Event::SetInterval(interval_)) => *interval = interval_,
+                    // TODO: Add ability to change the frames and breaks the inner loop.
                     Err(TryRecvError::Empty) => {}
                 };
 
