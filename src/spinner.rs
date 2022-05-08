@@ -247,7 +247,7 @@ impl Spinner {
     /// use spinners_rs::Spinners;
     ///
     /// let sp = Spinners::Dots.into_spinner().unwrap();
-    /// assert_eq!(sp.name(), "Dots");
+    /// assert_eq!(sp.get_name(), "Dots");
     /// ```
     pub fn get_name(&self) -> String {
         let sp_string = self.spinner.to_string().chars().collect::<Vec<char>>();
