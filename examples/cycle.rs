@@ -10,16 +10,19 @@ const WHITESPACE: &str = "                                                  ";
 fn main() {
     let sps = Spinners::iter().collect::<Vec<Spinners>>();
     let len = sps.len();
-    for (i, sp) in sps.iter().enumerate() {
-        let mut sp: Spinner = (*sp).into();
-        sp.set_message(format!(
+    let sp = sps.get(0).unwrap();
+    let mut spinner: Spinner = (*sp).into();
+    spinner.start();
+
+    for (i, sp) in sps[1..].iter().enumerate() {
+        spinner.set_spinner(*sp);
+        spinner.set_message(format!(
             " {:0>2}/{} {}{}",
             i + 1,
             len + 1,
-            sp.get_name(),
+            spinner.get_name(),
             WHITESPACE
         ));
-        sp.start();
 
         thread::sleep(Duration::from_millis(1000));
     }

@@ -22,6 +22,8 @@ pub enum Event {
     SetMessage(String),
     /// Update the spinner interval
     SetInterval(u64),
+    /// Update the spinner frames
+    SetFrames(Vec<&'static str>),
 }
 
 #[derive(Debug, Clone)]
@@ -31,8 +33,8 @@ pub enum Event {
 pub struct Spinner {
     /// The enum variant used in this spinner
     pub spinner: Spinners,
-    frames: Vec<&'static str>,
     sender: Option<Sender<Event>>,
+    frames: Arc<Mutex<Vec<&'static str>>>,
     interval: Arc<Mutex<u64>>,
     message: Arc<Mutex<String>>,
 }
@@ -72,11 +74,12 @@ impl Spinner {
     {
         let spinner_type: Spinners = spinner.into();
         let frames = spinner_type.get_frames();
+        let length = frames.len();
 
         Self {
             spinner: spinner.into(),
-            frames: frames.clone(),
-            interval: Arc::new(Mutex::new(1000 / frames.len() as u64)),
+            frames: Arc::new(Mutex::new(frames)),
+            interval: Arc::new(Mutex::new(1000 / length as u64)),
             message: Arc::new(Mutex::new(message.to_string())),
             sender: None,
         }
@@ -91,19 +94,22 @@ impl Spinner {
         let (sender, recv) = channel::<Event>();
 
         thread::spawn(move || 'outer: loop {
-            let frames = spinner.frames.clone();
-
             let mut stdout = stdout();
+            let mut frames = spinner.frames.lock();
 
-            for frame in frames.iter() {
-                let mut interval = spinner.interval.lock();
+            for frame in frames.clone().iter() {
                 let mut message = spinner.message.lock();
+                let mut interval = spinner.interval.lock();
 
                 match recv.try_recv() {
                     Ok(Event::Stop) | Err(TryRecvError::Disconnected) => break 'outer,
                     Ok(Event::SetMessage(message_)) => *message = message_,
                     Ok(Event::SetInterval(interval_)) => *interval = interval_,
-                    // TODO: Add ability to change the frames and breaks the inner loop.
+                    Ok(Event::SetFrames(frames_)) => {
+                        *frames = frames_;
+                        // Break the inner loop and start over with the new frames
+                        break;
+                    }
                     Err(TryRecvError::Empty) => {}
                 };
 
@@ -245,6 +251,15 @@ impl Spinner {
             sender.send(Event::SetMessage(message.to_string())).unwrap();
         } else {
             *self.message.lock() = message.to_string();
+        }
+    }
+
+    pub fn set_spinner(&mut self, spinner: Spinners) {
+        self.spinner = spinner;
+        if let Some(sender) = &self.sender {
+            sender.send(Event::SetFrames(spinner.get_frames())).unwrap();
+        } else {
+            *self.frames.lock() = spinner.get_frames();
         }
     }
 
