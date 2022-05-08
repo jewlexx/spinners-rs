@@ -1,7 +1,7 @@
 use std::{
     io::{stdout, Write},
     sync::{
-        mpsc::{channel, Sender, TryRecvError},
+        mpsc::{channel, SendError, Sender, TryRecvError},
         Arc,
     },
     thread,
@@ -132,16 +132,15 @@ impl Spinner {
     ///
     /// sp.stop();
     /// ```
-    pub fn stop(&mut self) {
+    pub fn stop(&mut self) -> Option<SendError<Event>> {
+        let mut e = None;
         if let Some(sender) = &self.sender {
-            let e = sender.send(Event::Stop).err();
-
-            if let Some(e) = e {
-                eprintln!("{}", e);
-            }
+            e = sender.send(Event::Stop).err();
         }
 
         self.sender = None;
+
+        e
     }
 
     /// Stops the spinner and replaces it with the given message
