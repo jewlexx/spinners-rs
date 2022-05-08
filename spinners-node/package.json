@@ -1,0 +1,32 @@
+{
+  "name": "spinners-node",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "spinners",
+    "cli",
+    "rust",
+    "node"
+  ],
+  "homepage": "https://github.com/jewlexx/spinners-rs#readme",
+  "bugs": {
+    "url": "https://github.com/jewlexx/spinners-rs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jewlexx/spinners-rs.git"
+  },
+  "license": "MIT",
+  "author": "Juliette Cordor",
+  "main": "index.node",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc dist/index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test"
+  },
+  "devDependencies": {
+    "cargo-cp-artifact": "0.1"
+  }
+}
