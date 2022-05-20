@@ -14,7 +14,7 @@ fn main() {
     let mut spinner: Spinner = (*sp).into();
     spinner.start();
 
-    for (i, sp) in sps[1..].iter().enumerate() {
+    for (i, sp) in sps[..].iter().enumerate() {
         spinner.set_spinner(*sp);
         spinner.set_message(format!(
             " {:0>2}/{} {}{}",

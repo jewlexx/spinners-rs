@@ -1,7 +1,3 @@
-use std::collections::HashMap;
-
-use lazy_static::lazy_static;
-use maplit::hashmap;
 use strum::{Display, EnumIter, EnumString};
 
 #[derive(Debug, Clone, Copy, EnumIter, Display, EnumString)]
@@ -181,16 +177,12 @@ pub enum Spinners {
 }
 
 impl Spinners {
+    // rustfmt is disabled as the formatting gave weird results
+    #[rustfmt::skip]
     /// Gets the frames for any given spinner
-    pub fn get_frames(&self) -> Vec<&'static str> {
-        SPINNER_MAP.get(&self.to_string()).unwrap().to_vec()
-    }
-}
-
-lazy_static! {
-    static ref SPINNER_MAP: HashMap<String, Vec<&'static str>> = {
-        hashmap! {
-            r"dots".into() => vec![
+    pub const fn get_frames(&self) -> &'static [&'static str] {
+        match *self {
+            Spinners::Dots => &[
             r"⠋",
             r"⠙",
             r"⠹",
@@ -202,7 +194,7 @@ lazy_static! {
             r"⠇",
             r"⠏"
             ],
-            "dots2".into()  =>  vec![
+            Spinners::Dots2 => &[
             r"⣾",
             r"⣽",
             r"⣻",
@@ -212,7 +204,7 @@ lazy_static! {
             r"⣯",
             r"⣷"
             ],
-            "dots3".into()  =>  vec![
+            Spinners::Dots3 => &[
             r"⠋",
             r"⠙",
             r"⠚",
@@ -224,7 +216,7 @@ lazy_static! {
             r"⠳",
             r"⠓"
             ],
-            "dots4".into()  =>  vec![
+            Spinners::Dots4 => &[
             r"⠄",
             r"⠆",
             r"⠇",
@@ -240,7 +232,7 @@ lazy_static! {
             r"⠇",
             r"⠆"
             ],
-            "dots5".into()  =>  vec![
+            Spinners::Dots5 => &[
             r"⠋",
             r"⠙",
             r"⠚",
@@ -259,7 +251,7 @@ lazy_static! {
             r"⠓",
             r"⠋"
             ],
-            "dots6".into()  =>  vec![
+            Spinners::Dots6 => &[
             r"⠁",
             r"⠉",
             r"⠙",
@@ -285,7 +277,7 @@ lazy_static! {
             r"⠉",
             r"⠁"
             ],
-            "dots7".into()  =>  vec![
+            Spinners::Dots7 => &[
             r"⠈",
             r"⠉",
             r"⠋",
@@ -311,7 +303,7 @@ lazy_static! {
             r"⠉",
             r"⠈"
             ],
-            "dots8".into()  =>  vec![
+            Spinners::Dots8 => &[
             r"⠁",
             r"⠁",
             r"⠉",
@@ -342,7 +334,7 @@ lazy_static! {
             r"⠈",
             r"⠈"
             ],
-            "dots9".into()  =>  vec![
+            Spinners::Dots9 => &[
             r"⢹",
             r"⢺",
             r"⢼",
@@ -352,7 +344,7 @@ lazy_static! {
             r"⡗",
             r"⡏"
             ],
-            "dots10".into()  =>  vec![
+            Spinners::Dots10 => &[
             r"⢄",
             r"⢂",
             r"⢁",
@@ -361,7 +353,7 @@ lazy_static! {
             r"⡐",
             r"⡠"
             ],
-            "dots11".into()  =>  vec![
+            Spinners::Dots11 => &[
             r"⠁",
             r"⠂",
             r"⠄",
@@ -371,7 +363,7 @@ lazy_static! {
             r"⠐",
             r"⠈"
             ],
-            "pipe".into()  =>  vec![
+            Spinners::Pipe => &[
             r"┤",
             r"┘",
             r"┴",
@@ -381,7 +373,7 @@ lazy_static! {
             r"┬",
             r"┐"
             ],
-            "star".into()  =>  vec![
+            Spinners::Star => &[
             r"✶",
             r"✸",
             r"✹",
@@ -389,12 +381,12 @@ lazy_static! {
             r"✹",
             r"✷"
             ],
-            "star2".into()  =>  vec![
+            Spinners::Star2 => &[
             r"+",
             r"x",
             r"*"
             ],
-            "flip".into()  =>  vec![
+            Spinners::Flip => &[
             r"_",
             r"_",
             r"_",
@@ -408,12 +400,12 @@ lazy_static! {
             r"_",
             r"_"
             ],
-            "hamburger".into()  =>  vec![
+            Spinners::Hamburger => &[
             r"☱",
             r"☲",
             r"☴"
             ],
-            "growVertical".into()  =>  vec![
+            Spinners::GrowVertical => &[
             r"▁",
             r"▃",
             r"▄",
@@ -425,7 +417,7 @@ lazy_static! {
             r"▄",
             r"▃"
             ],
-            "growHorizontal".into()  =>  vec![
+            Spinners::GrowHorizontal => &[
             r"▏",
             r"▎",
             r"▍",
@@ -439,7 +431,7 @@ lazy_static! {
             r"▍",
             r"▎"
             ],
-            "balloon".into()  =>  vec![
+            Spinners::Balloon => &[
             r".",
             r"i",
             r"n",
@@ -455,7 +447,7 @@ lazy_static! {
             r"*",
             r" "
             ],
-            "balloon2".into()  =>  vec![
+            Spinners::Balloon2 => &[
             r".",
             r"o",
             r"O",
@@ -464,36 +456,36 @@ lazy_static! {
             r"o",
             r"."
             ],
-            "noise".into()  =>  vec![
+            Spinners::Noise => &[
             r"▓",
             r"▒",
             r"░"
             ],
-            "bounce".into()  =>  vec![
+            Spinners::Bounce => &[
             r"⠁",
             r"⠂",
             r"⠄",
             r"⠂"
             ],
-            "boxBounce".into()  =>  vec![
+            Spinners::BoxBounce => &[
             r"▖",
             r"▘",
             r"▝",
             r"▗"
             ],
-            "boxBounce2".into()  =>  vec![
+            Spinners::BoxBounce2 => &[
             r"▌",
             r"▀",
             r"▐",
             r"▄"
             ],
-            "triangle".into()  =>  vec![
+            Spinners::Triangle => &[
             r"◢",
             r"◣",
             r"◤",
             r"◥"
             ],
-            "arc".into()  =>  vec![
+            Spinners::Arc => &[
             r"◜",
             r"◠",
             r"◝",
@@ -501,90 +493,90 @@ lazy_static! {
             r"◡",
             r"◟"
             ],
-            "circle".into()  =>  vec![
+            Spinners::Circle => &[
             r"◡",
             r"⊙",
             r"◠"
             ],
-            "squareCorners".into()  =>  vec![
-            r"◰",
-            r"◳",
-            r"◲",
-            r"◱"
-            ],
-            "circleQuaters".into()  =>  vec![
+            Spinners::CircleQuaters => &[
             r"◴",
             r"◷",
             r"◶",
             r"◵"
             ],
-            "circleHalves".into()  =>  vec![
+            Spinners::SquareCorners => &[
+            r"◰",
+            r"◳",
+            r"◲",
+            r"◱"
+            ],
+            Spinners::CircleHalves => &[
             r"◐",
             r"◓",
             r"◑",
             r"◒"
             ],
-            "squish".into()  =>  vec![
+            Spinners::Squish => &[
             r"╫",
             r"╪"
             ],
-            "toggle".into()  =>  vec![
+            Spinners::Toggle => &[
             r"⊶",
             r"⊷"
             ],
-            "toggle2".into()  =>  vec![
+            Spinners::Toggle2 => &[
             r"▫",
             r"▪"
             ],
-            "toggle3".into()  =>  vec![
+            Spinners::Toggle3 => &[
             r"□",
             r"■"
             ],
-            "toggle4".into()  =>  vec![
+            Spinners::Toggle4 => &[
             r"■",
             r"□",
             r"▪",
             r"▫"
             ],
-            "toggle5".into()  =>  vec![
+            Spinners::Toggle5 => &[
             r"▮",
             r"▯"
             ],
-            "toggle6".into()  =>  vec![
+            Spinners::Toggle6 => &[
             r"ဝ",
             r"၀"
             ],
-            "toggle7".into()  =>  vec![
+            Spinners::Toggle7 => &[
             r"⦾",
             r"⦿"
             ],
-            "toggle8".into()  =>  vec![
+            Spinners::Toggle8 => &[
             r"◍",
             r"◌"
             ],
-            "toggle9".into()  =>  vec![
+            Spinners::Toggle9 => &[
             r"◉",
             r"◎"
             ],
-            "toggle10".into()  =>  vec![
+            Spinners::Toggle10 => &[
             r"㊂",
             r"㊀",
             r"㊁"
             ],
-            "toggle11".into()  =>  vec![
+            Spinners::Toggle11 => &[
             r"⧇",
             r"⧆"
             ],
-            "toggle12".into()  =>  vec![
+            Spinners::Toggle12 => &[
             r"☗",
             r"☖"
             ],
-            "toggle13".into()  =>  vec![
+            Spinners::Toggle13 => &[
             r"=",
             r"*",
             r"-"
             ],
-            "arrow".into()  =>  vec![
+            Spinners::Arrow => &[
             r"←",
             r"↖",
             r"↑",
@@ -594,7 +586,7 @@ lazy_static! {
             r"↓",
             r"↙"
             ],
-            "dots8Bit".into() => vec![
+            Spinners::Dots8Bit => &[
             r"⠀",
             r"⠁",
             r"⠂",
@@ -852,13 +844,13 @@ lazy_static! {
             r"⣾",
             r"⣿"
             ],
-            "line".into() => vec![
+            Spinners::Line => &[
             r"-",
-            r"\",
+            r"",
             r"|",
             r"/"
             ],
-            "line2".into() => vec![
+            Spinners::Line2 => &[
             r"⠂",
             r"-",
             r"–",
@@ -866,23 +858,13 @@ lazy_static! {
             r"–",
             r"-"
             ],
-            "pipe".into() => vec![
-            r"┤",
-            r"┘",
-            r"┴",
-            r"└",
-            r"├",
-            r"┌",
-            r"┬",
-            r"┐"
-            ],
-            "simpleDots".into() => vec![
+            Spinners::SimpleDots => &[
             r".  ",
             r".. ",
             r"...",
             r"   "
             ],
-            "simpleDotsScrolling".into() => vec![
+            Spinners::SimpleDotsScrolling => &[
             r".  ",
             r".. ",
             r"...",
@@ -890,213 +872,7 @@ lazy_static! {
             r"  .",
             r"   "
             ],
-            "star".into() => vec![
-            r"✶",
-            r"✸",
-            r"✹",
-            r"✺",
-            r"✹",
-            r"✷"
-            ],
-            "star2".into() => vec![
-            r"+",
-            r"x",
-            r"*"
-            ],
-            "flip".into() => vec![
-            r"_",
-            r"_",
-            r"_",
-            r"-",
-            r"`",
-            r"`",
-            r"'",
-            r"´",
-            r"-",
-            r"_",
-            r"_",
-            r"_"
-            ],
-            "hamburger".into() => vec![
-            r"☱",
-            r"☲",
-            r"☴"
-            ],
-            "growVertical".into() => vec![
-            r"▁",
-            r"▃",
-            r"▄",
-            r"▅",
-            r"▆",
-            r"▇",
-            r"▆",
-            r"▅",
-            r"▄",
-            r"▃"
-            ],
-            "growHorizontal".into() => vec![
-            r"▏",
-            r"▎",
-            r"▍",
-            r"▌",
-            r"▋",
-            r"▊",
-            r"▉",
-            r"▊",
-            r"▋",
-            r"▌",
-            r"▍",
-            r"▎"
-            ],
-            "balloon".into() => vec![
-            r" ",
-            r".",
-            r"o",
-            r"O",
-            r"@",
-            r"*",
-            r" "
-            ],
-            "balloon2".into() => vec![
-            r".",
-            r"o",
-            r"O",
-            r"°",
-            r"O",
-            r"o",
-            r"."
-            ],
-            "noise".into() => vec![
-            r"▓",
-            r"▒",
-            r"░"
-            ],
-            "bounce".into() => vec![
-            r"⠁",
-            r"⠂",
-            r"⠄",
-            r"⠂"
-            ],
-            "boxBounce".into() => vec![
-            r"▖",
-            r"▘",
-            r"▝",
-            r"▗"
-            ],
-            "boxBounce2".into() => vec![
-            r"▌",
-            r"▀",
-            r"▐",
-            r"▄"
-            ],
-            "triangle".into() => vec![
-            r"◢",
-            r"◣",
-            r"◤",
-            r"◥"
-            ],
-            "arc".into() => vec![
-            r"◜",
-            r"◠",
-            r"◝",
-            r"◞",
-            r"◡",
-            r"◟"
-            ],
-            "circle".into() => vec![
-            r"◡",
-            r"⊙",
-            r"◠"
-            ],
-            "squareCorners".into() => vec![
-            r"◰",
-            r"◳",
-            r"◲",
-            r"◱"
-            ],
-            "circleQuarters".into() => vec![
-            r"◴",
-            r"◷",
-            r"◶",
-            r"◵"
-            ],
-            "circleHalves".into() => vec![
-            r"◐",
-            r"◓",
-            r"◑",
-            r"◒"
-            ],
-            "squish".into() => vec![
-            r"╫",
-            r"╪"
-            ],
-            "toggle".into() => vec![
-            r"⊶",
-            r"⊷"
-            ],
-            "toggle2".into() => vec![
-            r"▫",
-            r"▪"
-            ],
-            "toggle3".into() => vec![
-            r"□",
-            r"■"
-            ],
-            "toggle4".into() => vec![
-            r"■",
-            r"□",
-            r"▪",
-            r"▫"
-            ],
-            "toggle5".into() => vec![
-            r"▮",
-            r"▯"
-            ],
-            "toggle6".into() => vec![
-            r"ဝ",
-            r"၀"
-            ],
-            "toggle7".into() => vec![
-            r"⦾",
-            r"⦿"
-            ],
-            "toggle8".into() => vec![
-            r"◍",
-            r"◌"
-            ],
-            "toggle9".into() => vec![
-            r"◉",
-            r"◎"
-            ],
-            "toggle10".into() => vec![
-            r"㊂",
-            r"㊀",
-            r"㊁"
-            ],
-            "toggle11".into() => vec![
-            r"⧇",
-            r"⧆"
-            ],
-            "toggle12".into() => vec![
-            r"☗",
-            r"☖"
-            ],
-            "toggle13".into() => vec![
-            r"=",
-            r"*",
-            r"-"
-            ],
-            "arrow".into() => vec![
-            r"←",
-            r"↖",
-            r"↑",
-            r"↗",
-            r"→",
-            r"↘",
-            r"↓",
-            r"↙"
-            ],
-            "arrow2".into() => vec![
+            Spinners::Arrow2 => &[
             r"⬆️ ",
             r"↗️ ",
             r"➡️ ",
@@ -1106,7 +882,7 @@ lazy_static! {
             r"⬅️ ",
             r"↖️ "
             ],
-            "arrow3".into() => vec![
+            Spinners::Arrow3 => &[
             r"▹▹▹▹▹",
             r"▸▹▹▹▹",
             r"▹▸▹▹▹",
@@ -1114,7 +890,7 @@ lazy_static! {
             r"▹▹▹▸▹",
             r"▹▹▹▹▸"
             ],
-            "bouncingBar".into() => vec![
+            Spinners::BouncingBar => &[
             r"[    ]",
             r"[=   ]",
             r"[==  ]",
@@ -1131,7 +907,7 @@ lazy_static! {
             r"[==  ]",
             r"[=   ]"
             ],
-            "bouncingBall".into() => vec![
+            Spinners::BouncingBall => &[
             r"( ●    )",
             r"(  ●   )",
             r"(   ●  )",
@@ -1143,24 +919,24 @@ lazy_static! {
             r"( ●    )",
             r"(●     )"
             ],
-            "smiley".into() => vec![
+            Spinners::Smiley => &[
             r"😄 ",
             r"😝 "
             ],
-            "monkey".into() => vec![
+            Spinners::Monkey => &[
             r"🙈 ",
             r"🙈 ",
             r"🙉 ",
             r"🙊 "
             ],
-            "hearts".into() => vec![
+            Spinners::Hearts => &[
             r"💛 ",
             r"💙 ",
             r"💜 ",
             r"💚 ",
             r"❤️ "
             ],
-            "clock".into() => vec![
+            Spinners::Clock => &[
             r"🕛 ",
             r"🕐 ",
             r"🕑 ",
@@ -1174,12 +950,12 @@ lazy_static! {
             r"🕙 ",
             r"🕚 "
             ],
-            "earth".into() => vec![
+            Spinners::Earth => &[
             r"🌍 ",
             r"🌎 ",
             r"🌏 "
             ],
-            "material".into() => vec![
+            Spinners::Material => &[
             r"█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
             r"██▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
             r"███▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
@@ -1273,7 +1049,7 @@ lazy_static! {
             r"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
             r"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁"
             ],
-            "moon".into() => vec![
+            Spinners::Moon => &[
             r"🌑 ",
             r"🌒 ",
             r"🌓 ",
@@ -1283,11 +1059,11 @@ lazy_static! {
             r"🌗 ",
             r"🌘 "
             ],
-            "runner".into() => vec![
+            Spinners::Runner => &[
             r"🚶 ",
             r"🏃 "
             ],
-            "pong".into() => vec![
+            Spinners::Pong => &[
             r"▐⠂       ▌",
             r"▐⠈       ▌",
             r"▐ ⠂      ▌",
@@ -1319,20 +1095,20 @@ lazy_static! {
             r"▐ ⡀      ▌",
             r"▐⠠       ▌"
             ],
-            "shark".into() => vec![
-            r"▐|\____________▌",
-            r"▐_|\___________▌",
-            r"▐__|\__________▌",
-            r"▐___|\_________▌",
-            r"▐____|\________▌",
-            r"▐_____|\_______▌",
-            r"▐______|\______▌",
-            r"▐_______|\_____▌",
-            r"▐________|\____▌",
-            r"▐_________|\___▌",
-            r"▐__________|\__▌",
-            r"▐___________|\_▌",
-            r"▐____________|\▌",
+            Spinners::Shark => &[
+            r"▐|____________▌",
+            r"▐_|___________▌",
+            r"▐__|__________▌",
+            r"▐___|_________▌",
+            r"▐____|________▌",
+            r"▐_____|_______▌",
+            r"▐______|______▌",
+            r"▐_______|_____▌",
+            r"▐________|____▌",
+            r"▐_________|___▌",
+            r"▐__________|__▌",
+            r"▐___________|_▌",
+            r"▐____________|▌",
             r"▐____________/|▌",
             r"▐___________/|_▌",
             r"▐__________/|__▌",
@@ -1347,13 +1123,13 @@ lazy_static! {
             r"▐_/|___________▌",
             r"▐/|____________▌"
             ],
-            "dqpb".into() => vec![
+            Spinners::Dqpb => &[
             r"d",
             r"q",
             r"p",
             r"b"
             ],
-            "weather".into() => vec![
+            Spinners::Weather => &[
             r"☀️ ",
             r"☀️ ",
             r"☀️ ",
@@ -1378,11 +1154,11 @@ lazy_static! {
             r"☀️ ",
             r"☀️ "
             ],
-            "christmas".into() => vec![
+            Spinners::Christmas => &[
             r"🌲",
             r"🎄"
             ],
-            "grenade".into() => vec![
+            Spinners::Grenade => &[
             r"،    ",
             r"′    ",
             r" ´   ",
@@ -1398,19 +1174,19 @@ lazy_static! {
             r"     ",
             r"     "
             ],
-            "point".into() => vec![
+            Spinners::Point => &[
             r"∙∙∙",
             r"●∙∙",
             r"∙●∙",
             r"∙∙●",
             r"∙∙∙"
             ],
-            "layer".into() => vec![
+            Spinners::Layer => &[
             r"-",
             r"=",
             r"≡"
             ],
-            "betaWave".into() => vec![
+            Spinners::BetaWave => &[
             r"ρββββββ",
             r"βρβββββ",
             r"ββρββββ",
@@ -1419,7 +1195,7 @@ lazy_static! {
             r"βββββρβ",
             r"ββββββρ"
             ],
-            "fingerDance".into() => vec![
+            Spinners::FingerDance => &[
             r"🤘 ",
             r"🤟 ",
             r"🖖 ",
@@ -1427,7 +1203,7 @@ lazy_static! {
             r"🤚 ",
             r"👆 "
             ],
-            "fistBump".into() => vec![
+            Spinners::FistBump => &[
             r"🤜　　　　🤛 ",
             r"🤜　　　　🤛 ",
             r"🤜　　　　🤛 ",
@@ -1436,7 +1212,7 @@ lazy_static! {
             r"　🤜✨🤛　　 ",
             r"🤜　✨　🤛　 "
             ],
-            "soccerHeader".into() => vec![
+            Spinners::SoccerHeader => &[
             r" 🧑⚽️       🧑 ",
             r"🧑  ⚽️      🧑 ",
             r"🧑   ⚽️     🧑 ",
@@ -1450,7 +1226,7 @@ lazy_static! {
             r"🧑   ⚽️     🧑 ",
             r"🧑  ⚽️      🧑 "
             ],
-            "mindblown".into() => vec![
+            Spinners::Mindblown => &[
             r"😐 ",
             r"😐 ",
             r"😮 ",
@@ -1466,27 +1242,27 @@ lazy_static! {
             r"　 ",
             r"　 "
             ],
-            "speaker".into() => vec![
+            Spinners::Speaker => &[
             r"🔈 ",
             r"🔉 ",
             r"🔊 ",
             r"🔉 "
             ],
-            "orangePulse".into() => vec![
+            Spinners::OrangePulse => &[
             r"🔸 ",
             r"🔶 ",
             r"🟠 ",
             r"🟠 ",
             r"🔶 "
             ],
-            "bluePulse".into() => vec![
+            Spinners::BluePulse => &[
             r"🔹 ",
             r"🔷 ",
             r"🔵 ",
             r"🔵 ",
             r"🔷 "
             ],
-            "orangeBluePulse".into() => vec![
+            Spinners::OrangeBluePulse => &[
             r"🔸 ",
             r"🔶 ",
             r"🟠 ",
@@ -1494,11 +1270,9 @@ lazy_static! {
             r"🔶 ",
             r"🔹 ",
             r"🔷 ",
-            r"🔵 ",
-            r"🔵 ",
             r"🔷 "
             ],
-            "timeTravel".into() => vec![
+            Spinners::TimeTravel => &[
             r"🕛 ",
             r"🕚 ",
             r"🕙 ",
@@ -1512,7 +1286,7 @@ lazy_static! {
             r"🕑 ",
             r"🕐 "
             ],
-            "aesthetic".into() => vec![
+            Spinners::Aesthetic => &[
             r"▰▱▱▱▱▱▱",
             r"▰▰▱▱▱▱▱",
             r"▰▰▰▱▱▱▱",
@@ -1523,5 +1297,5 @@ lazy_static! {
             r"▰▱▱▱▱▱▱"
             ],
         }
-    };
+    }
 }

@@ -1,14 +1,13 @@
 use std::{
     io::{stdout, Write},
-    sync::{
-        mpsc::{channel, SendError, Sender, TryRecvError},
-        Arc,
-    },
+    sync::mpsc::{channel, SendError, Sender, TryRecvError},
     thread,
     time::Duration,
 };
 
-use parking_lot::Mutex;
+/// A type alias for the spinner frames type
+pub type Frames = &'static [&'static str];
+
 use strum::Display;
 
 use crate::Spinners;
@@ -23,7 +22,7 @@ pub enum Event {
     /// Update the spinner interval
     SetInterval(u64),
     /// Update the spinner frames
-    SetFrames(Vec<&'static str>),
+    SetFrames(Frames),
 }
 
 #[derive(Debug, Clone)]
@@ -34,9 +33,9 @@ pub struct Spinner {
     /// The enum variant used in this spinner
     pub spinner: Spinners,
     sender: Option<Sender<Event>>,
-    frames: Arc<Mutex<Vec<&'static str>>>,
-    interval: Arc<Mutex<u64>>,
-    message: Arc<Mutex<String>>,
+    frames: Frames,
+    interval: u64,
+    message: String,
 }
 
 impl Drop for Spinner {
@@ -78,9 +77,9 @@ impl Spinner {
 
         Self {
             spinner: spinner.into(),
-            frames: Arc::new(Mutex::new(frames)),
-            interval: Arc::new(Mutex::new(1000 / length as u64)),
-            message: Arc::new(Mutex::new(message.to_string())),
+            frames,
+            interval: 1000 / length as u64,
+            message: message.to_string(),
             sender: None,
         }
     }
@@ -95,27 +94,23 @@ impl Spinner {
 
         thread::spawn(move || 'outer: loop {
             let mut stdout = stdout();
-            let mut frames = spinner.frames.lock();
+            let frames = spinner.frames;
 
-            for frame in frames.clone().iter() {
-                let mut message = spinner.message.lock();
-                let mut interval = spinner.interval.lock();
+            for frame in frames.iter() {
+                let mut message = spinner.message.clone();
+                let mut interval = spinner.interval;
 
                 match recv.try_recv() {
                     Ok(Event::Stop) | Err(TryRecvError::Disconnected) => break 'outer,
-                    Ok(Event::SetMessage(message_)) => *message = message_,
-                    Ok(Event::SetInterval(interval_)) => *interval = interval_,
-                    Ok(Event::SetFrames(frames_)) => {
-                        *frames = frames_;
-                        // Break the inner loop and start over with the new frames
-                        break;
-                    }
+                    Ok(Event::SetMessage(message_)) => message = message_,
+                    Ok(Event::SetInterval(interval_)) => interval = interval_,
+                    Ok(Event::SetFrames(_)) => break,
                     Err(TryRecvError::Empty) => {}
                 };
 
-                print!("\r{} {}", frame, *message);
+                print!("\r{} {}", frame, message);
                 stdout.flush().unwrap();
-                thread::sleep(Duration::from_millis(*interval));
+                thread::sleep(Duration::from_millis(interval));
             }
         });
 
@@ -188,7 +183,7 @@ impl Spinner {
     /// ```
     pub fn stop_with_symbol<S: std::fmt::Display>(&mut self, symbol: S) {
         self.stop();
-        print!("\r{} {}", symbol, *self.message.lock());
+        print!("\r{} {}", symbol, self.message);
         stdout().flush().unwrap();
     }
 
@@ -221,7 +216,7 @@ impl Spinner {
         if let Some(sender) = &self.sender {
             sender.send(Event::SetInterval(interval)).unwrap();
         } else {
-            *self.interval.lock() = interval;
+            self.interval = interval;
         }
     }
 
@@ -250,7 +245,7 @@ impl Spinner {
         if let Some(sender) = &self.sender {
             sender.send(Event::SetMessage(message.to_string())).unwrap();
         } else {
-            *self.message.lock() = message.to_string();
+            self.message = message.to_string();
         }
     }
 
@@ -284,7 +279,7 @@ impl Spinner {
         if let Some(sender) = &self.sender {
             sender.send(Event::SetFrames(spinner.get_frames())).unwrap();
         } else {
-            *self.frames.lock() = spinner.get_frames();
+            self.frames = spinner.get_frames();
         }
     }
 
