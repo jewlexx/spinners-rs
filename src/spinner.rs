@@ -66,19 +66,13 @@ impl Spinner {
     /// let mut sp: Spinner = Spinners::Dots.into();
     /// sp.start();
     /// ```
-    pub fn new<T, S>(spinner: T, message: S) -> Self
-    where
-        T: Into<Spinners> + Copy,
-        S: std::fmt::Display,
-    {
-        let spinner_type: Spinners = spinner.into();
-        let frames = spinner_type.get_frames();
-        let length = frames.len();
+    pub fn new(spinner: Spinners, message: impl std::fmt::Display) -> Self {
+        let frames = spinner.get_frames();
 
         Self {
-            spinner: spinner.into(),
+            spinner,
             frames,
-            interval: 1000 / length as u64,
+            interval: 1000 / frames.len() as u64,
             message: message.to_string(),
             sender: None,
         }
